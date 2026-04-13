@@ -1,0 +1,15 @@
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ }
+
+
+body,html {
+  font-family: 'Geist', sans-serif;
+} 
+
+body {
+  background-color: #f7f5f0;
+  min-height: 100vh;
+}
