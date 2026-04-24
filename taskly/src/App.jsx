@@ -1,4 +1,5 @@
 import { Header } from './components/Header'
+import { TodoInput } from './components/TodoInput'
 import './App.css'
 
 function App() {
@@ -6,7 +7,8 @@ function App() {
 
   return (
     <div className='app-container'> 
-    <Header />
+     <Header />
+     <TodoInput />
     </div>
   )
 }

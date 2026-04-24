@@ -1,0 +1,126 @@
+/*
+
+.input-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.input-parent {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  background: white;
+  border: 1px solid #e0ded9;
+  border-radius: 10px;
+  padding: 6px 16px;
+  margin-left: 40px;
+}
+
+.input-parent:focus-within {
+  border-color: #4f7c6b;
+  box-shadow: 0 0 0 3px rgba(79, 124, 107, 0.12);
+}
+
+.input-icon {
+  font-size: 16px;
+  color: #aaa;
+  margin-right: 10px;
+}
+
+.todo-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  padding: 10px 0;
+  background: transparent;
+}
+
+.todo-input::placeholder {
+  color: #bbb;
+}
+
+.add-button {
+  background-color: #4f7c6b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 22px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  flex-shrink: 0;
+  margin-right: 40px;
+}
+
+.add-button:hover { opacity: 0.9; }
+.add-button:active { opacity: 0.7; }
+.add-button:disabled { background-color: #a0b8b0; cursor: not-allowed; }
+
+*/
+
+.input-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.input-parent {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  margin-left: 40px;
+  border: 1px solid #e0ded9;
+  border-radius: 8px;
+  background-color: white;  
+  padding-left: 10px;
+}
+
+.input-parent:focus-within {
+  border-color: #4f7c6b;
+  box-shadow: 0 0 0 3px rgba(79, 124, 107, 0.12);
+}
+
+
+.todo-input {
+  flex: 1;
+  background-color: white;
+  color: black;
+  border: none;
+  outline: none;
+  padding: 16px 0px;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.input-icon {
+  font-size: 19px;
+  color: #aaa;
+  margin-right: 12px;
+  margin-left: 8px;
+}
+
+.add-button {
+  margin-right: 40px;
+  background-color:#4f7c6b;;
+  color: white;
+  border: none;
+  padding: 9px 22px 9px 22px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: opacity 0.2s;
+}
+
+.add-button:hover {
+  opacity: 0.9;
+}
+
+.add-button:active {
+  opacity: 0.7;
+}
