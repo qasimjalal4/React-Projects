@@ -26,4 +26,7 @@
   cursor: pointer;
 }
 
- 
+.tab-box.active {
+  background-color: #4f7c6b;
+  color: white;
+} 
