@@ -3,7 +3,7 @@ import './BillInput.css'
 export function BillInput({bill,setBill}) {
 
   function handleBillChange(event) {
-    setBill(parseFloat(event.target.value) || 0)
+    setBill(parseFloat(event.target.value))
   }
 
   return (
