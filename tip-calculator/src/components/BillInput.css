@@ -1,7 +1,7 @@
 .bill-container {
   display: flex;
   flex-direction: column;
-  padding-top: 50px;
+  padding-top: 40px;
   margin-left: 60px;
   margin-right: 60px;
   gap: 6px;

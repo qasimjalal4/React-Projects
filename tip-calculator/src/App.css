@@ -1,6 +1,6 @@
 .app-container {
   height: 85vh;
-  width: 40vw;
+  max-width: 37vw;
   background-color: #0f0f0f;
   margin-left: auto;
   margin-right: auto;
@@ -27,6 +27,10 @@
   margin-right: auto;
   margin-top: 25px;
   border-radius: 20px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 34px;
 }
 
 .reset-button {
@@ -34,10 +38,12 @@
   color: #666;
   border: 1px solid #666;
   margin-top: 60px;
-  width: 325px;
-  margin-left: 55px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
   height: 50px;
   font-size: 16px;
   border-radius: 8px;
   cursor: pointer;
+  
 }
