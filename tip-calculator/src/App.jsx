@@ -12,6 +12,11 @@ function App() {
   const tipAmount = (parseFloat(bill) || 0) * (tipPercent/100);
   const totalBill =(parseFloat(bill) || 0) + tipAmount;
  
+  function resetAll() {
+    setBill('');
+    setTipPercent(0.00)
+  }
+
   return (
     <div className='app-container'>
        <div className='header'>Tip Calc</div>
@@ -19,6 +24,11 @@ function App() {
         <BillInput bill={bill} setBill={setBill} />
         <TipSelector tipPercent={tipPercent} setTipPercent={setTipPercent} />
         <ResultDisplay tipAmount={tipAmount} totalBill={totalBill} />
+        <button
+         onClick={resetAll}
+         className='reset-button'>
+          Reset
+        </button>
        </div>
     </div>
   )

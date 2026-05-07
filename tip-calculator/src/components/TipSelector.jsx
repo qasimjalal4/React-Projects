@@ -1,3 +1,5 @@
+import './TipSelector.css'
+
 export function TipSelector({tipPercent,setTipPercent}) {
 
   const tipOptions = [10,15,20,25];
@@ -10,7 +12,7 @@ export function TipSelector({tipPercent,setTipPercent}) {
      {tipOptions.map((tip) => {
       return (
         <button
-         className={tipPercent === tip ? 'active': ''}
+         className={`tip-button  ${tipPercent === tip ? 'active': ''} `}
          key={tip} 
          onClick={() => {
           setTipPercent(tip)

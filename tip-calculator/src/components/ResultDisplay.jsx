@@ -1,13 +1,15 @@
+import './ResultDisplay.css'
+
 export function ResultDisplay({tipAmount,totalBill}) {
   return (
     <>
-     <div>
+     <div className='tip-amount-container'>
       <span>Tip Amount: </span>
-      <span>{tipAmount.toFixed(2)}</span>
+      <span className='tip-amount'>${tipAmount.toFixed(2)}</span>
      </div>
-     <div>
+     <div className='total-bill-container'>
       <span>Total Bill: </span>
-      <span>{totalBill.toFixed(2)}</span>
+      <span className='total-bill'>${totalBill.toFixed(2)}</span>
      </div>
     </>
   )

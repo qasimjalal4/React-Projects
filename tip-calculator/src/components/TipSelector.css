@@ -1,0 +1,23 @@
+.tip-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 60px;
+  padding-right: 60px;
+  margin-bottom: 60px;
+}
+
+.tip-button {
+  padding: 9px 10px;
+  border: 1px solid #666;
+  background-color: black;
+  color: #888888;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.tip-button.active {
+  background-color: #c8f135;
+  color: black;
+}

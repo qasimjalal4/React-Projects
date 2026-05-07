@@ -1,1 +1,49 @@
- 
+.bill-container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+  margin-left: 60px;
+  margin-right: 60px;
+  gap: 6px;
+}
+
+.bill-container span {
+  font-size: 18px;
+}
+
+.input-container {
+  display: flex;
+  flex: 1;
+  background-color: black;
+  border: 1px solid #666;
+  border-radius: 8px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.input-container:focus-within {
+  border: 1px solid #c8f135;
+}
+
+.input-box {
+  flex: 1;
+  padding: 14px 6px;
+  background-color: black;
+  border: none;
+  outline: none;
+  color: white;
+  height: 50px;
+  font-size: 16px;
+  padding-left: 12px;
+  border-radius: 8px;
+}
+
+.input-box::placeholder {
+  color: #666;
+}
+
+
+.icon {
+  color: #c8f135;
+  padding-left: 10px;
+}

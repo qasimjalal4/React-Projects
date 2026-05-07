@@ -1,0 +1,23 @@
+.tip-amount-container,
+.total-bill-container {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 55px;
+  margin-right: 55px;
+  font-size: 19px;
+}
+
+.total-bill-container {
+  margin-top: 20px;
+}
+
+.tip-amount {
+  color: white;
+  font-size: 22px;
+}
+
+.total-bill {
+  color: #c8f135;
+  font-size: 26px;
+  font-weight: 600;
+}

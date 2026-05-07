@@ -7,14 +7,17 @@ export function BillInput({bill,setBill}) {
   }
 
   return (
-    <div className='input-container'>
-      <span>Bill Amount</span>
+    <div className='bill-container'>
+     <span>Bill Amount</span>
+     <div className='input-container'>
+      <span className='icon'>$</span>
       <input
        onChange={handleBillChange}
        value={bill}
        className='input-box'
        placeholder='0.00'
       />
+     </div> 
     </div>
   )
 }
