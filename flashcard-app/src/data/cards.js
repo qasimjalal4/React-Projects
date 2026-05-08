@@ -1,4 +1,4 @@
-const cards = [
+export const cards = [
   {
     id: '1',
     question: 'What is a React component?',
