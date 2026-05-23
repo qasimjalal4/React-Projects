@@ -1,4 +1,5 @@
 import { cards } from './data/cards';
+import { Header } from './components/Header';
 import { FlashCard } from './components/FlashCard'
 import { Controls } from './components/Controls';
 import { ProgressBar } from './components/ProgressBar';
@@ -39,8 +40,11 @@ function App() {
 
   const progress = ((currentIndex + 1) / cards.length ) * 100;
 
+
+
   return (
     <div className='app-container'>
+      <Header  cards={cards} currentIndex={currentIndex} />
      <ProgressBar progress={progress} />     
      <FlashCard isFlipped={isFlipped} onFlip={flipCard} currentIndex={currentIndex} />
      <Controls onPrev={prevQuestion} onNext={nextQuestion} onFlip={flipCard} onStartAgain={startAain}  />  
