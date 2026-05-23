@@ -1,5 +1,6 @@
 import { cards } from './data/cards';
 import { FlashCard } from './components/FlashCard'
+import { Controls } from './components/Controls';
 import './App.css'
 import { useState } from 'react'
 
@@ -7,24 +8,38 @@ function App() {
 
    
   const [isFlipped,setIsFlipped] = useState(false);
-  const [index,setIndex] = useState(0);
+  const [currentIndex,setCurrentIndex] = useState(0);
+
+ 
+  function prevQuestion() {
+    if(currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1)
+    } 
+
+    setIsFlipped(false)
+  }
 
   function nextQuestion() {
-    if(index < cards.length) {
-      setIndex(index + 1)
-    } else {
-      setIndex(index)
-    }
+
+    if(currentIndex < cards.length-1) {
+      setCurrentIndex(currentIndex + 1)
+    } 
+
+    setIsFlipped(false);
   }
 
   function flipCard() {
     setIsFlipped(!isFlipped)
   }
 
+  function startAain() {
+    setCurrentIndex(0);
+  }
+
   return (
     <div className='app-container'>
-     <FlashCard isFlipped={isFlipped} onFlip={flipCard} index={index} />
-     <button onClick ={nextQuestion}>Next</button>        
+     <FlashCard isFlipped={isFlipped} onFlip={flipCard} currentIndex={currentIndex} />
+     <Controls onPrev={prevQuestion} onNext={nextQuestion} onFlip={flipCard} onStartAgain={startAain}  />      
     </div>
   )
 }
