@@ -5,6 +5,8 @@ button {
   font-weight: 550;
   cursor: pointer;
   color: #6b7280;
+
+  transition : all 0.3s ease;
 }
 
 button:hover {
