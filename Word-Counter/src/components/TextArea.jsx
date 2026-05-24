@@ -4,7 +4,7 @@ import './TextArea.css'
 export function TextArea({onChange,text}) {
   return (
     <div className="textarea-container">
-     <textarea
+     <textarea maxLength={1500}
       className='textarea-box'
       onChange={onChange}
       value={text}

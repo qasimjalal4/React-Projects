@@ -1,6 +1,7 @@
 import { TextArea } from './components/TextArea'
 import { Header } from './components/Header';
 import { StatsGrid } from './components/StatsGrid';
+import { ProgressBar } from './components/ProgressBar';
 import './App.css'
 import { useMemo, useState } from 'react'
 
@@ -26,12 +27,13 @@ function App() {
     }
   }, [text])
 
-  console.log(stats);
+  const progress = (text.length / 1500) * 100;
 
   return (
     <div className='app-container'>
       <Header />
       <TextArea text={text} onChange={handleTextChange} />
+      <ProgressBar progress={progress} />
       <StatsGrid stats={stats} />
     </div>
   )
