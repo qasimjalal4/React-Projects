@@ -1,5 +1,6 @@
 import { TextArea } from './components/TextArea'
 import { Header } from './components/Header';
+import { StatsGrid } from './components/StatsGrid';
 import './App.css'
 import { useMemo, useState } from 'react'
 
@@ -31,6 +32,7 @@ function App() {
     <div className='app-container'>
       <Header />
       <TextArea text={text} onChange={handleTextChange} />
+      <StatsGrid stats={stats} />
     </div>
   )
 }
