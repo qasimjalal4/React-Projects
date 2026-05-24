@@ -2,6 +2,7 @@ import { TextArea } from './components/TextArea'
 import { Header } from './components/Header';
 import { StatsGrid } from './components/StatsGrid';
 import { ProgressBar } from './components/ProgressBar';
+import { BottomRow } from './components/BottomRow';
 import './App.css'
 import { useMemo, useState } from 'react'
 
@@ -29,12 +30,17 @@ function App() {
 
   const progress = (text.length / 1500) * 100;
 
+  function Clear() {
+    setText('')
+  }
+
   return (
     <div className='app-container'>
       <Header />
       <TextArea text={text} onChange={handleTextChange} />
       <ProgressBar progress={progress} />
       <StatsGrid stats={stats} />
+      <BottomRow onClear={Clear} stats={stats} />
     </div>
   )
 }

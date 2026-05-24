@@ -1,0 +1,35 @@
+.bottom-row {
+  width: 73%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+}
+
+.clear-button,
+.reading-time {
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  background-color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 16px;
+  font-size: 15px; 
+  color: #7b7c7e;
+}
+
+.clear-button {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.time {
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+.clear-button:active {
+  color: rgb(216, 14, 14);
+  border: 1px solid rgb(216, 14, 14)
+}
