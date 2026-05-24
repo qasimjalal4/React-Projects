@@ -1,12 +1,12 @@
 import './TextArea.css'
 
 
-export function TextArea({inputText,text}) {
+export function TextArea({onChange,text}) {
   return (
     <div className="textarea-container">
      <textarea
       className='textarea-box'
-      onChange={inputText}
+      onChange={onChange}
       value={text}
       placeholder='Start typing or paste your text here...'
      />

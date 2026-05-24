@@ -1,20 +1,36 @@
 import { TextArea } from './components/TextArea'
 import { Header } from './components/Header';
 import './App.css'
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 
 function App() {
  
   const [text,setText] = useState('');
 
-  function inputText(event) {
+  function handleTextChange(event) {
     setText(event.target.value)
   }
+
+  const stats = useMemo(() => {
+
+      const chars = text.length;
+      const words = text.trim() === '' ? 0 : text.trim().split(" ").length;
+      const sentences = text.trim() === '' ? 0 : (text.match(/[.!?]+/g) || []).length;
+      const  readingTime = Math.ceil((words / 200) * 60)
+    return {
+       chars,
+       words,
+       sentences,
+       readingTime
+    }
+  }, [text])
+
+  console.log(stats);
 
   return (
     <div className='app-container'>
       <Header />
-      <TextArea text={text} inputText={inputText} />
+      <TextArea text={text} onChange={handleTextChange} />
     </div>
   )
 }
