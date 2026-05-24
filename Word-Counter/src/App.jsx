@@ -4,7 +4,7 @@ import { StatsGrid } from './components/StatsGrid';
 import { ProgressBar } from './components/ProgressBar';
 import { BottomRow } from './components/BottomRow';
 import './App.css'
-import { useMemo, useState } from 'react'
+import { useMemo, useState,useEffect } from 'react'
 
 function App() {
  
@@ -33,6 +33,12 @@ function App() {
   function Clear() {
     setText('')
   }
+
+  useEffect(() => {
+
+    document.title = `${stats.words} words - Word Counter`;
+
+  }, [stats.words])
 
   return (
     <div className='app-container'>
