@@ -1,7 +1,6 @@
-import { cards } from '../data/cards'
 import './FlashCard.css'
 
-export function FlashCard({onFlip,isFlipped,currentIndex}) {
+export function FlashCard({onFlip,isFlipped,card}) {
   return (
     <div className='card-container'>
       <div className={`card ${isFlipped ? 'flip' : ''}`}
@@ -10,14 +9,14 @@ export function FlashCard({onFlip,isFlipped,currentIndex}) {
         <div className="front">
           <span className='question-tag'>Question</span>
           <div className='question-text'>
-            {cards[currentIndex].question}
+            {card.question}
           </div>
         <span className='card-hint'>Tap to Flip</span>  
         </div>
         <div className="back">
           <span className='answer-tag'>Answer</span>
           <div className='answer-text'>
-            {cards[currentIndex].answer}
+            {card.answer}
           </div>
         <span className='card-hint'>Tap to Flip</span>  
         </div>

@@ -15,27 +15,31 @@ function App() {
  
   function prevQuestion() {
     if(currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1)
+      setCurrentIndex(currentIndex - 1);
+        setIsFlipped(false);
     } 
 
-    setIsFlipped(false)
+   
   }
 
   function nextQuestion() {
 
     if(currentIndex < cards.length-1) {
-      setCurrentIndex(currentIndex + 1)
+      setCurrentIndex(currentIndex + 1);
+
+       setIsFlipped(false);
     } 
 
-    setIsFlipped(false);
   }
 
   function flipCard() {
     setIsFlipped(!isFlipped)
   }
 
-  function startAain() {
+  function startAgain() {
     setCurrentIndex(0);
+
+    setIsFlipped(false);
   }
 
   const progress = ((currentIndex + 1) / cards.length ) * 100;
@@ -46,8 +50,8 @@ function App() {
     <div className='app-container'>
       <Header  cards={cards} currentIndex={currentIndex} />
      <ProgressBar progress={progress} />     
-     <FlashCard isFlipped={isFlipped} onFlip={flipCard} currentIndex={currentIndex} />
-     <Controls onPrev={prevQuestion} onNext={nextQuestion} onFlip={flipCard} onStartAgain={startAain}  />  
+     <FlashCard card={cards[currentIndex]} isFlipped={isFlipped} onFlip={flipCard} currentIndex={currentIndex} />
+     <Controls cards={cards} onPrev={prevQuestion} onNext={nextQuestion} onFlip={flipCard} onStartAgain={startAgain}  />  
     </div>
   )
 }

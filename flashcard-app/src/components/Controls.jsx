@@ -6,6 +6,7 @@ export function Controls({onPrev,onNext,onFlip,onStartAgain}) {
       <button 
        className='prev-button'
        onClick={onPrev}
+       
       >
         Prev
       </button>
