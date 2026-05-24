@@ -1,12 +1,18 @@
- 
+import { TextArea } from './components/TextArea'
 import './App.css'
+import { useState } from 'react'
 
 function App() {
  
+  const [text,setText] = useState('');
+
+  function inputText(event) {
+    setText(event.target.value)
+  }
 
   return (
     <div className='app-container'>
-      
+      <TextArea text={text} inputText={inputText} />
     </div>
   )
 }
