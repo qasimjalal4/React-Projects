@@ -127,6 +127,7 @@ import { useCallback, useState } from 'react'
        lower={isLowerCaseAllowed}
        numbers={isNumbersAllowed}
        symbols={isSymbolsAllowed}
+      
        />
     </div>
   )
