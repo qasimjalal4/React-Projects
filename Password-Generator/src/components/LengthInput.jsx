@@ -8,7 +8,7 @@ export function LengthInput({ length, setLength }) {
       <input
         type="range"
         value={length}
-        onChange={(e) => setLength(e.target.value)}
+        onChange={(e) => setLength(Number(e.target.value))}
         min={8}
         max={20}
         className="range-selector"

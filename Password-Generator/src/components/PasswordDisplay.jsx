@@ -6,6 +6,7 @@ export function PasswordDisplay({password}) {
       <input
        value={password}
        className='password-input'
+       type='text'
        placeholder="Select atleast one option"
        readOnly
       />

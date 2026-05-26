@@ -4,15 +4,24 @@ import { PasswordGenerator } from './PasswordGenerator'
 
 import './PasswordOptions.css'
 
-export function PasswordOptions({length,setLength}) {
+export function PasswordOptions({length,setLength,handleUppercase,handleLowercase,handleNumbers,handleSymbols,generateButton,upper,lower,numbers,symbols}) {
   return (
     <div className='options-container'>
        
        <LengthInput length={length} setLength={setLength} />
 
-       <CheckBoxInput />
+       <CheckBoxInput 
+        handleUppercase={handleUppercase} 
+        handleLowercase={handleLowercase}
+        handleNumbers={handleNumbers}
+        handleSymbols={handleSymbols}
+        upper={upper}
+        lower={lower}
+        numbers={numbers}
+        symbols={symbols}
+        />
 
-       <PasswordGenerator />
+       <PasswordGenerator generateButton={generateButton} />
 
     </div>
   )
