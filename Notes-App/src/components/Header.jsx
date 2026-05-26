@@ -2,12 +2,12 @@ import NoteImg from '../assets/Notes.png'
 import './Header.css'
 
 
-export function Header() {
+export function Header({notesCount}) {
   return (
     <div className='header'>
       <div className='left-side'>
         <img className='notes-image' src={NoteImg}  />
-        <span className='notes-count'>4 Notes</span>
+        <span className='notes-count'>{notesCount} Notes</span>
       </div>
       <div className='middle'>
         <span className='title'>My Notes</span>
