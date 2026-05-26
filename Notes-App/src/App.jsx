@@ -6,7 +6,7 @@ import './App.css'
 
 function App() {
  
-  const [text,setText] = useState('');
+  const [query,setQuery] = useState('');
   const [notes, setNotes] = useState([
   {
     id: 1,
@@ -49,6 +49,9 @@ function App() {
     setNotes(prev => [...prev.filter(card => card.id !== id)])
   }
 
+  const filteredNotes = notes.filter(note => 
+     note.title.toLowerCase().includes(query.toLowerCase()));
+
   return (
     <div className='app-container'>
       <Header notesCount={notes.length} />
@@ -56,10 +59,10 @@ function App() {
        className='search-bar'
        placeholder='Search your notes...'
        type='text'
-       onChange={e => setText(e.target.value)}
-       value={text}
+       onChange={e => setQuery(e.target.value)}
+       value={query}
       />
-      <NotesCard notes={notes} setNotes={setNotes} onDelete={deleteCard} />
+      <NotesCard notes={filteredNotes}   onDelete={deleteCard} />
     </div>
   )
 }
