@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 18px;
-  row-gap: 10px;
+  row-gap: 14px;
   margin-top: 40px;
   margin-left: 28px;
   margin-right: 28px;
@@ -17,6 +17,7 @@
   padding: 12px 14px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   border-left: 4px solid #3b82f6;
+  
 }
 
 .note-title {
@@ -57,3 +58,9 @@
 .bottom-row button:active {
   color: rgb(206, 16, 16);
 }
+
+
+.note-card.blue { border-left-color: #3b82f6; }
+.note-card.yellow { border-left-color: #f59e0b; }
+.note-card.green { border-left-color: #10b981; }
+.note-card.pink { border-left-color: #ec4899; }

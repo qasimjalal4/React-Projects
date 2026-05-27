@@ -5,7 +5,7 @@ export function NotesCard({notes,onDelete}) {
     <div className='notes-grid'>
       {notes.map((note) => {
         return (
-          <div key={note.id} className='note-card'>
+          <div key={note.id} className={`note-card ${note.color}`}>
            <div className='note-title'>
              {note.title}
            </div>

@@ -1,11 +1,17 @@
 import { Header } from './components/Header'
 import { NotesCard } from './components/NotesCard';
+import { Modal } from './components/Modal';
 import { useState } from 'react'
 import './App.css'
  
 
+  const colors = ['blue','yellow','green','pink'];
+
 function App() {
- 
+   
+  
+  
+
   const [query,setQuery] = useState('');
   const [notes, setNotes] = useState([
   {
@@ -16,7 +22,8 @@ function App() {
            Components can be functional or class-based depending on the project setup.
            Using reusable components makes applications easier to manage and scale.
            Props and state are commonly used inside components for dynamic behavior.`,
-    date: "2026-05-26"
+    date: "2026-05-26",
+    color: 'blue'
   },
 
   {
@@ -27,7 +34,8 @@ function App() {
            Browsers cannot read JSX directly, so Babel converts it into regular JavaScript.
            JSX expressions can include variables, functions, and dynamic content.
            Most React developers use JSX to build user interfaces efficiently.`,
-    date: "2026-05-24"
+    date: "2026-05-24",
+    color: 'pink'
   },
 
   {
@@ -38,10 +46,35 @@ function App() {
            Whenever state changes, React automatically re-renders the component.
            Hooks simplified state management compared to older class components.
            useState is one of the most commonly used hooks in React applications.`,
-    date: "2026-05-22"
+    date: "2026-05-22",
+    color: 'yellow'
   }
  
 ]);
+
+   
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalTitle, setModalTitle] = useState('');
+  const [modalDesc, setModalDesc] = useState('')
+
+   function saveNote() {
+
+      
+
+    const newNote = {
+      id: crypto.randomUUID(),
+      title: modalTitle,
+      body: modalDesc,
+      date: new Date().toLocaleDateString(),
+      color: colors[Math.floor(Math.random() * colors.length)]
+    }
+
+    setNotes([...notes, newNote])
+
+     setModalTitle('')
+     setModalDesc('')
+     setIsModalOpen(false)
+   }
 
 
   function deleteCard(id) {
@@ -52,9 +85,11 @@ function App() {
   const filteredNotes = notes.filter(note => 
      note.title.toLowerCase().includes(query.toLowerCase()));
 
+  
+     
   return (
     <div className='app-container'>
-      <Header notesCount={notes.length} />
+      <Header notesCount={notes.length} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} modalTitle={modalTitle} setModalTitle={setModalTitle} modalDesc={modalDesc} setModalDesc={setModalDesc} onSave={saveNote} />
       <input
        className='search-bar'
        placeholder='Search your notes...'
@@ -62,7 +97,13 @@ function App() {
        onChange={e => setQuery(e.target.value)}
        value={query}
       />
-      <NotesCard notes={filteredNotes}   onDelete={deleteCard} />
+      <NotesCard  notes={filteredNotes}   onDelete={deleteCard} />
+      <Modal isModalOpen={isModalOpen}
+       setIsModalOpen={setIsModalOpen}
+       modalTitle={modalTitle} setModalTitle={setModalTitle}
+       modalDesc={modalDesc} setModalDesc={setModalDesc}
+       onSave={saveNote}  />
+       
     </div>
   )
 }

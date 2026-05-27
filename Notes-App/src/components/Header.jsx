@@ -1,8 +1,9 @@
+
 import NoteImg from '../assets/Notes.png'
 import './Header.css'
 
 
-export function Header({notesCount}) {
+export function Header({notesCount,setIsModalOpen}) {
   return (
     <div className='header'>
       <div className='left-side'>
@@ -13,8 +14,19 @@ export function Header({notesCount}) {
         <span className='title'>My Notes</span>
       </div>
       <div className='right-side'>
-        <button className='new-note-button'>+ New Note</button>
+        <button className='new-note-button'
+         onClick={() => setIsModalOpen(true)}
+        >+ New Note</button>
+
+      
       </div>
+
+   
+
     </div>
+
+      
   )
+
+   
 }
