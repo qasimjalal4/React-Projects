@@ -6,7 +6,7 @@
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-
+  position: fixed;
 }
 
 .title {
@@ -28,5 +28,11 @@
   text-decoration: none;
   font-weight: 550;
   color: #6b7280;
+}
+
+.link.active {
+   color : #3b82f6;
+   border-bottom: 2px solid #3b82f6;  
+   padding-bottom: 3px;
 }
 
