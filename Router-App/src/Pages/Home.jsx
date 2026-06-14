@@ -2,8 +2,8 @@
 export function Home() {
   return (
     <>
-     <div className='mx-auto max-w-md mt-12 flex justify-center flex-col items-start'>
-       <h1 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+     <div className='max-w-md mx-auto mt-12 flex justify-center flex-col items-start'>
+       <h1 className="text-3xl font-bold text-gray-900 mb-8">
         Welcome to Home Page
        </h1>
        <p className="text-lg text-gray-900 mb-4 leading-relaxed">
