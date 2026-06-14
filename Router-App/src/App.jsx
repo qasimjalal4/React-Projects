@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-      <div className='h-screen max-w-2xl mx-auto bg-[#f4f6f9] shadow'>
+      <div className='h-screen max-w-2xl mx-auto bg-slate-50 shadow'>
         <Header  />
         <Outlet />
       </div>
