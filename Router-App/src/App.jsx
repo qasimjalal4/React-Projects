@@ -1,6 +1,4 @@
- 
-import { Outlet } from 'react-router'
-import './App.css'
+import { Outlet } from 'react-router-dom'
 import { Header } from './Pages/Header'
 
 function App() {
@@ -8,8 +6,8 @@ function App() {
 
   return (
     <>
-      <div className='app-container'>
-        <Header />
+      <div className='h-screen max-w-2xl mx-auto bg-[#f4f6f9] shadow'>
+        <Header  />
         <Outlet />
       </div>
  
