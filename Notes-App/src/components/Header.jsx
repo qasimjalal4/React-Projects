@@ -1,5 +1,5 @@
 
-import NoteImg from '../assets/Notes.png'
+import NoteImg from '/Notes.png'
 import './Header.css'
 
 
