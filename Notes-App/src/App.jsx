@@ -1,4 +1,4 @@
-import { Header } from './components/Header'
+import  Header  from './components/Header'
 import { NotesCard } from './components/NotesCard';
 import { Modal } from './components/Modal';
 import { colors } from './constants/colors';
