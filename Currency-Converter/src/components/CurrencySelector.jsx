@@ -1,13 +1,17 @@
 
 
-const CurrencySelector = () => {
+const CurrencySelector = ({label,options,value,onChange}) => {
   return (
     <>
-     <label>From</label>
-     <select name="" id=""
+     <label>{label}</label>
+     <select value={value} onChange={event => onChange(event.target.value)}
       className="w-full p-2 mt-2 mb-3 rounded-md border border-[#ddd]"
      >
-      <option>2</option>
+      {options.map((option) => 
+          (
+          <option key={option} value={option}>{option}</option>
+         )
+      )}
      </select>
     </>
   )
