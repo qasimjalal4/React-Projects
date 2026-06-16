@@ -5,7 +5,7 @@ const CurrencySelector = ({label,options,value,onChange}) => {
     <>
      <label>{label}</label>
      <select value={value} onChange={event => onChange(event.target.value)}
-      className="w-full p-2 mt-2 mb-3 rounded-md border border-[#ddd]"
+      className="w-full p-2 mt-2 mb-3 rounded-md border border-[#ddd] outline-none"
      >
       {options.map((option) => 
           (
