@@ -12,7 +12,7 @@ import { useEffect, useState } from "react";
     .then((response) => {
       return response.json()
     }).then((data) => {
-      setCurrencyData(data.conversion_rates || {})
+      setCurrencyData(data.rates || {})
     })
     
   },[currency])

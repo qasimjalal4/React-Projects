@@ -9,9 +9,26 @@ function App() {
   const [amount, setAmount] = useState('')
   const [from, setFrom] = useState('USD')
   const [to , setTo] = useState('PKR')
+  const [output,setOutput] = useState(null)
 
   const currencyData = useCurrencyInfo(from)
 
+   const handleSwap = () => {
+    setFrom(to)
+    setTo(from)
+
+    handleConvert()
+   }
+
+   const handleConvert = () => {
+
+    
+
+    const rate = currencyData[to]
+    const result = (Number(amount) * rate).toFixed(2)
+
+    setOutput(result)
+   }
   
 
   return (
@@ -40,10 +57,16 @@ function App() {
        className="w-full p-2 mt-2 mb-3 border-none bg-[#2563eb] text-white rounded-md cursor-pointer
        hover:bg-[#1d4ed8] transition
        "
+       onClick={handleConvert}
+       disabled={!amount || amount <= 0}
       >
         Convert
       </button>
-      <p className="text-center mt-3 font-bold">Enter amount to convert</p>
+       {output ? (
+        <p className="mt-3 text-center font-bold">{amount} {from} = {output} {to} </p>
+       ) : (
+         <p className="mt-3 text-center font-bold">Enter amount to convert</p>
+       )}
     </div>
   )
 }
