@@ -17,7 +17,8 @@ function App() {
     setFrom(to)
     setTo(from)
 
-    handleConvert()
+    
+    
    }
 
    const handleConvert = () => {
