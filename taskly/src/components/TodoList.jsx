@@ -1,10 +1,11 @@
 import { TodoItem } from "./TodoItem" 
-import './TodoList.css'
+
 
 export function TodoList({todos,onToggle,onDelete}) {
 
   return (
-    <div className="todo-list">
+    <div className="flex flex-col gap-2 mt-8">
+    
      {todos.map((todo) => {
        return (
         <>
