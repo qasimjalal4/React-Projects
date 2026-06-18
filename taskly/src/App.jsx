@@ -5,7 +5,7 @@ import { FilterBar } from './components/FilterBar';
 import { TodoList } from './components/TodoList';
 import { Footer } from './components/Footer';
 import { useState } from 'react';
-import './App.css'
+
 
 function App() {
    
@@ -55,7 +55,7 @@ function App() {
   const remaining = todos.filter(t => !t.done).length;
 
   return (
-    <div className='app-container'> 
+    <div className="bg-[beige]  min-h-screen px-5"> 
      <Header />
      <TodoInput todos={todos} setTodos={setTodos} />
      <Stats total={total} completed={completed} remaining={remaining} />

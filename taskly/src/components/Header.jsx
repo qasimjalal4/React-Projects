@@ -1,14 +1,19 @@
 import dayjs from 'dayjs'
-import './Header.css'
+
 
 export function Header() {
   return (
-    <div className="header">
-      <div className="header-top">
-        <h1 className='title'>Task<em>ly</em></h1>
-        <span className="date-badge">{dayjs().format('dddd, MMMM D')}</span>
+    <div className="pt-10 w-full">
+      <div className="flex flex-1 justify-between items-center">
+        <h1 className='text-black text-[38px] font-semibold'>
+          Task<em className="text-[#4f7c6b]">ly</em></h1>
+        <span
+         className="bg-white border border-[#e0ded9] text-gray-500
+        py-[3px] px-[6px] rounded-md
+        "
+        >{dayjs().format('dddd, MMMM D')}</span>
       </div>
-      <p className="tagline">
+      <p className="mt-2 text-[17px] text-gray-500">
         Stay Focused.Keep working hard. 
       </p>
     </div>
