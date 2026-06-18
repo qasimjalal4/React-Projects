@@ -4,6 +4,7 @@ import { Stats } from "./components/Stats";
 import { FilterBar } from './components/FilterBar';
 import { TodoList } from './components/TodoList';
 import { Footer } from './components/Footer';
+import { tasklyData } from './constants';
 import { useState } from 'react';
 
 
@@ -11,17 +12,7 @@ function App() {
    
   
     const [filter,setFilter] = useState('All');
-    const [todos,setTodos] = useState([
-      {
-        id: crypto.randomUUID(),
-        task: 'Built the Github Profile Finder',
-        done: false
-      }, {
-        id: crypto.randomUUID(),
-        task: 'Learn React hooks deeply',
-        done: true
-      }
-    ])
+    const [todos,setTodos] = useState(tasklyData)
 
     
    
