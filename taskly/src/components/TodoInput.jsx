@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export function TodoInput({todos,setTodos}) {
+const TodoInput = ({todos,setTodos}) => {
 
   const [inputText,setInputText] = useState('');
 
@@ -23,11 +23,8 @@ export function TodoInput({todos,setTodos}) {
     setInputText('')
   }
 
-  
-
   return (
-    
-    <div className="w-full flex mt-7 gap-5 items-center">
+     <div className="w-full flex mt-7 gap-5 items-center">
        <div  className="flex flex-1 ml-9 border border-[#e0ded9] pl-3 rounded-lg items-center bg-white
         focus-within:border-[#4f7c6b]
         focus-within:ring-2
@@ -55,3 +52,6 @@ export function TodoInput({todos,setTodos}) {
      
   )
 }
+
+export default TodoInput
+

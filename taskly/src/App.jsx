@@ -1,9 +1,9 @@
-import { Header } from './components/Header'
-import { TodoInput } from './components/TodoInput'
-import { Stats } from "./components/Stats";
-import { FilterBar } from './components/FilterBar';
-import { TodoList } from './components/TodoList';
-import { Footer } from './components/Footer';
+import  Header  from './components/Header'
+import  TodoInput from './components/TodoInput'
+import  Stats  from "./components/Stats";
+import  FilterBar  from './components/FilterBar';
+import  TodoList  from './components/TodoList';
+import  Footer  from './components/Footer';
 import { tasklyData } from './constants';
 import { useState } from 'react';
 
@@ -17,14 +17,14 @@ function App() {
     
    
 
-   function toggleTodo(id) {
+   const toggleTodo = (id) => {
 
     setTodos(prev => prev.map(t => t.id === id ? {
       ...t, done: !t.done} : t 
      ))
   }
 
-  function deleteTodo(id) {
+  const deleteTodo = (id) => {
     setTodos(prev => prev.filter(t => t.id !== id))
   }
 
@@ -35,7 +35,7 @@ function App() {
     return true;
   })
 
-  function clearCompleted() {
+  const clearCompleted = () => {
 
     setTodos(todos => todos.filter(t => !t.done))
   }

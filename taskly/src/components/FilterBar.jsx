@@ -1,7 +1,5 @@
 
-
-export function FilterBar({filter,setFilter}) {
-
+const FilterBar = (filter,setFilter) => {
   return (
     <div className="w-[520px] mx-auto flex bg-white h-[52px] mt-9 rounded-lg border border-[#e0ded9]
      justify-center items-center px-[5px]
@@ -23,3 +21,7 @@ export function FilterBar({filter,setFilter}) {
     </div>
   )
 }
+
+export default FilterBar
+
+ 

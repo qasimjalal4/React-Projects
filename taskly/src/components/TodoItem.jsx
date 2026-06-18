@@ -1,11 +1,7 @@
 
-
-export function TodoItem({todo,onToggle,onDelete}) {
-
-   
-
+const TodoItem = ({todo,onToggle,onDelete}) => {
   return (
-     <div className="
+    <div className="
       flex w-[520px] h-[55px] bg-white border border-[#e0ded9]
       mx-auto rounded-lg px-[5px] items-center group 
      ">
@@ -30,5 +26,10 @@ export function TodoItem({todo,onToggle,onDelete}) {
         Delete
       </button>
     </div>
+    
   )
 }
+
+export default TodoItem
+
+ 

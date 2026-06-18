@@ -1,7 +1,5 @@
 
-
-export function  Stats({total,completed,remaining}) {
-
+const Stats = ({total,completed,remaining}) => {
   return (
     <div className="w-full mt-7 flex justify-center items-center gap-14">
       <div  className="flex flex-col bg-white py-3 px-7 rounded-lg shadow-md font-semibold">
@@ -19,3 +17,7 @@ export function  Stats({total,completed,remaining}) {
     </div>
   )
 }
+
+export default Stats
+
+ 

@@ -1,8 +1,7 @@
-import { TodoItem } from "./TodoItem" 
+import  TodoItem  from "./TodoItem" 
 
 
-export function TodoList({todos,onToggle,onDelete}) {
-
+const TodoList = ({todos,onToggle,onDelete}) => {
   return (
     <div className="flex flex-col gap-2 mt-8">
     
@@ -16,4 +15,8 @@ export function TodoList({todos,onToggle,onDelete}) {
     })}
    </div>
   )
-} 
+}
+
+export default TodoList
+
+ 

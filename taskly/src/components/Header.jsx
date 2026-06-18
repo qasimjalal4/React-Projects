@@ -1,7 +1,6 @@
 import dayjs from 'dayjs'
 
-
-export function Header() {
+export const Header = () => {
   return (
     <div className="pt-10 w-full">
       <div className="flex flex-1 justify-between items-center">
@@ -19,3 +18,6 @@ export function Header() {
     </div>
   )
 }
+
+export default Header
+ 
