@@ -5,7 +5,7 @@ import { colors } from './constants/colors';
 import { notesData } from './constants/notesData';
 import SearchBar from './components/SearchBar';
 import { useState } from 'react'
-import './App.css'
+
  
 
  
