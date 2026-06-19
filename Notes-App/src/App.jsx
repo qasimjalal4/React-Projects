@@ -55,7 +55,7 @@ function App() {
      
   return (
     <>
-      <Header notesCount={notes.length} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} modalTitle={modalTitle} setModalTitle={setModalTitle} modalDesc={modalDesc} setModalDesc={setModalDesc} onSave={saveNote} />
+      <Header notesCount={notes.length} setIsModalOpen={setIsModalOpen}  />
       <SearchBar query={query} setQuery={setQuery} />
       <NotesCard  notes={filteredNotes}   onDelete={deleteCard} />
       <Modal isModalOpen={isModalOpen}
