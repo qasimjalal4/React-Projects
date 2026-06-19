@@ -4,7 +4,7 @@ import  NotesCard  from './components/NotesCard';
 import  Modal  from './components/Modal';
 import { colors } from './constants/colors';
 import { notesData } from './constants/notesData';
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 
  
 
@@ -16,12 +16,19 @@ function App() {
   
 
   const [query,setQuery] = useState('');
-  const [notes, setNotes] = useState(notesData);
+  const [notes,setNotes] = useState(() => {
+    const saved = localStorage.getItem('notes')
+    return saved ? JSON.parse(saved) : notesData
+  })
 
    
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalTitle, setModalTitle] = useState('');
   const [modalDesc, setModalDesc] = useState('')
+
+   useEffect(() => {
+      localStorage.setItem('notes',JSON.stringify(notes))
+    },[notes])
 
    const saveNote = () => {
 
