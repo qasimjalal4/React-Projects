@@ -1,5 +1,5 @@
 
-export function Modal({
+const Modal = ({
   isModalOpen,
   setIsModalOpen,
   modalTitle,
@@ -7,7 +7,7 @@ export function Modal({
   modalDesc,
   setModalDesc,
   onSave,
-}) {
+}) => {
   return (
     <>
       {isModalOpen && (
@@ -55,3 +55,6 @@ export function Modal({
     </>
   );
 }
+
+
+export default Modal

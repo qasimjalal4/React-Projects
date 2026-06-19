@@ -1,9 +1,9 @@
 import  Header  from './components/Header'
-import { NotesCard } from './components/NotesCard';
-import { Modal } from './components/Modal';
+import SearchBar from './components/SearchBar';
+import  NotesCard  from './components/NotesCard';
+import  Modal  from './components/Modal';
 import { colors } from './constants/colors';
 import { notesData } from './constants/notesData';
-import SearchBar from './components/SearchBar';
 import { useState } from 'react'
 
  
@@ -23,9 +23,7 @@ function App() {
   const [modalTitle, setModalTitle] = useState('');
   const [modalDesc, setModalDesc] = useState('')
 
-   function saveNote() {
-
-      
+   const saveNote = () => {
 
     const newNote = {
       id: crypto.randomUUID(),
@@ -43,7 +41,7 @@ function App() {
    }
 
 
-  function deleteCard(id) {
+  const deleteCard = (id) => {
 
     setNotes(prev => [...prev.filter(card => card.id !== id)])
   }

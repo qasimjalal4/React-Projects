@@ -1,6 +1,6 @@
 
 
-export function NotesCard({notes,onDelete}) {
+const NotesCard = ({notes,onDelete}) => {
   return (
       <div className="grid grid-cols-3 mt-10 mx-8 gap-x-5 gap-y-4 ">
       {notes.map((note) => {
@@ -31,3 +31,5 @@ export function NotesCard({notes,onDelete}) {
     </div>
   )
 }
+
+export default NotesCard
