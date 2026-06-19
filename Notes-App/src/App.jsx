@@ -3,6 +3,7 @@ import { NotesCard } from './components/NotesCard';
 import { Modal } from './components/Modal';
 import { colors } from './constants/colors';
 import { notesData } from './constants/notesData';
+import SearchBar from './components/SearchBar';
 import { useState } from 'react'
 import './App.css'
  
@@ -53,15 +54,9 @@ function App() {
   
      
   return (
-    <div className='app-container'>
+    <>
       <Header notesCount={notes.length} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} modalTitle={modalTitle} setModalTitle={setModalTitle} modalDesc={modalDesc} setModalDesc={setModalDesc} onSave={saveNote} />
-      <input
-       className='search-bar'
-       placeholder='Search your notes...'
-       type='text'
-       onChange={e => setQuery(e.target.value)}
-       value={query}
-      />
+      <SearchBar query={query} setQuery={setQuery} />
       <NotesCard  notes={filteredNotes}   onDelete={deleteCard} />
       <Modal isModalOpen={isModalOpen}
        setIsModalOpen={setIsModalOpen}
@@ -69,7 +64,7 @@ function App() {
        modalDesc={modalDesc} setModalDesc={setModalDesc}
        onSave={saveNote}  />
        
-    </div>
+    </>
   )
 }
 
