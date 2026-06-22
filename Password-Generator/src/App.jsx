@@ -1,7 +1,6 @@
 import { Header } from './components/Header'
 import { PasswordDisplay } from './components/PasswordDisplay'
 import { PasswordOptions } from './components/PasswordOptions'
-import './App.css'
 import { useCallback, useState } from 'react'
 
 
@@ -110,7 +109,7 @@ import { useCallback, useState } from 'react'
    
 
   return (
-    <div className='app-container'>
+    <div className="h-screen w-2/5 bg-[#f5f5f5] mx-auto shadow-lg">
       <Header />
       <PasswordDisplay 
        password={password}
