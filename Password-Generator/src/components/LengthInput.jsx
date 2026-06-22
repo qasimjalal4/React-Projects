@@ -1,9 +1,9 @@
 export function LengthInput({ length, setLength }) {
   return (
     <>
-      <div className="length-container">
-        <span className="label">Password Length</span>
-        <span className="password-length">{length}</span>
+      <div className="flex justify-between pt-3 mb-3">
+        <span className="font-semibold text-base">Password Length</span>
+        <span className="text-[#3b82f6] text-lg font-bold">{length}</span>
       </div>
       <input
         type="range"
