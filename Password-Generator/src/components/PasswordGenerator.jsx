@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export function PasswordGenerator({generateButton}) {
+const PasswordGenerator = ({generateButton}) => {
 
   useEffect(() => {
     generateButton();
@@ -14,3 +14,6 @@ export function PasswordGenerator({generateButton}) {
       >Generate Password</button>
   );
 }
+
+
+export default PasswordGenerator

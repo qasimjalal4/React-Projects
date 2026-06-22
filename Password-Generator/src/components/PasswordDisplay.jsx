@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 
 
-export function PasswordDisplay({password}) {
+const PasswordDisplay = ({password}) => {
 
    const [isCopied, setIsCopied] = useState(false);
   
@@ -43,3 +43,7 @@ export function PasswordDisplay({password}) {
     </div>
   )
 }
+
+
+
+export default PasswordDisplay

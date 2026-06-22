@@ -1,4 +1,4 @@
-export function LengthInput({ length, setLength }) {
+const LengthInput = ({ length, setLength }) => {
   return (
     <>
       <div className="flex justify-between pt-3 mb-3">
@@ -16,3 +16,6 @@ export function LengthInput({ length, setLength }) {
     </>
   );
 }
+
+
+export default LengthInput

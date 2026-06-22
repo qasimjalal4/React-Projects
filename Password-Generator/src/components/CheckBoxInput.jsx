@@ -1,4 +1,4 @@
-export function CheckBoxInput({handleUppercase,handleLowercase,handleNumbers,handleSymbols,upper,lower,numbers,symbols}) {
+const CheckBoxInput = ({handleUppercase,handleLowercase,handleNumbers,handleSymbols,upper,lower,numbers,symbols}) => {
   return (
     <>
       <p className="mt-4 font-bold text-base mb-6">Include: </p>
@@ -51,3 +51,6 @@ export function CheckBoxInput({handleUppercase,handleLowercase,handleNumbers,han
     </>
   );
 }
+
+
+export default CheckBoxInput

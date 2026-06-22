@@ -1,6 +1,6 @@
-import { Header } from './components/Header'
-import { PasswordDisplay } from './components/PasswordDisplay'
-import { PasswordOptions } from './components/PasswordOptions'
+import  Header  from './components/Header'
+import  PasswordDisplay  from './components/PasswordDisplay'
+import  PasswordOptions  from './components/PasswordOptions'
 import { useCallback, useState } from 'react'
 
 
