@@ -2,7 +2,7 @@ import { LengthInput } from './LengthInput'
 import { CheckBoxInput } from './CheckBoxInput'
 import { PasswordGenerator } from './PasswordGenerator'
 
-import './PasswordOptions.css'
+
 
 
 export function PasswordOptions({length,setLength,handleUppercase,handleLowercase,handleNumbers,handleSymbols,generateButton,upper,lower,numbers,symbols}) {
@@ -10,7 +10,7 @@ export function PasswordOptions({length,setLength,handleUppercase,handleLowercas
   
 
   return (
-    <div className='options-container'>
+    <div className="w-[70%] bg-[#ffffff] mx-auto rounded-lg shadow-md px-5 pb-7">
        
        <LengthInput length={length} setLength={setLength} />
 
