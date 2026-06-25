@@ -25,6 +25,14 @@ function App() {
   return (
     <div className="min-h-screen  flex flex-col gap-y-10 justify-center items-center pb-20">
       <SearchBar  inputText={inputText} setInputText={setInputText} onSearch={onSearch} />
+      {isLoading && <p>Loading...</p>}
+
+     {error && (
+     <p className="text-red-500">
+      {error}
+     </p>
+)}
+
       <ProfileCard user={user} userName={userName} /> 
     </div>
   )
