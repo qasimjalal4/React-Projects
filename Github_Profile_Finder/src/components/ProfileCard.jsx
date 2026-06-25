@@ -1,7 +1,7 @@
 
 const ProfileCard = ({user}) => {
   return (
-    <div className="border border-[#e2e8f0] bg-white w-[550px] rounded-lg flex 
+    <div className="border border-[#e2e8f0] bg-white w-[550px] rounded-lg flex justify-center items-center
      h-[320px]
     ">
      
@@ -56,10 +56,16 @@ const ProfileCard = ({user}) => {
         </div>
       </div>
     
-      <div className="flex justify-center items-center mt-5">
-        <button
-         className="bg-[#667eea] text-white px-3 py-[6px] rounded-md hover:opacity-90"
-        >View on Github</button>
+      <div className="flex justify-center items-center mt-4 mb-2">
+        <a
+         href={user.html_url}
+         target="_blank"
+        >
+          <button
+           className="bg-[#667eea] text-white px-3 py-[6px] rounded-md hover:opacity-90"
+           >View on Github
+          </button>
+        </a>
       </div>
      </div>
      )}
