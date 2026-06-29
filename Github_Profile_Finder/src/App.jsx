@@ -17,7 +17,6 @@ function App() {
     }  
 
     setUserName(inputText)
-    console.log(user)
 
     setInputText('')
   }

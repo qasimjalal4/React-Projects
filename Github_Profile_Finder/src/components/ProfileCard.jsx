@@ -26,6 +26,9 @@ const ProfileCard = ({user}) => {
         <div className="text-md text-gray-600">
          {user.location}
         </div>
+        <div className="text-md text-gray-600 mt-1">
+          {user.bio || 'No bio'}
+        </div>
      </div>
     </div>
 
