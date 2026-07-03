@@ -1,4 +1,4 @@
-import { useQuiz } from "../context/QuizProvider"
+import { useQuiz } from "../context/QuizContext"
 
 
 const WelcomeScreen = () => {

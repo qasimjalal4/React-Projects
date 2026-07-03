@@ -1,6 +1,7 @@
-import WelcomeScreen from "./components/WelcomeScreen"
-import QuizScreen from "./components/QuizScreen"
-import { useQuiz } from "./context/QuizContext"
+import { useQuiz } from "../context/QuizContext"
+import WelcomeScreen from "./WelcomeScreen"
+import QuizScreen from "./QuizScreen"
+ 
 
 const QuizApp = () => {
 

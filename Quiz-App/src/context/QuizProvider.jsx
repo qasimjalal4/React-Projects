@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export function QuizProvider({children}) {
 
-  const [gameStatus, setGameStatus] = useState('playing')
+  const [gameStatus, setGameStatus] = useState('welcome')
 
   const startQuiz = () => {
     setGameStatus('playing')
