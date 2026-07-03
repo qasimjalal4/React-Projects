@@ -1,5 +1,10 @@
+import { useQuiz } from "../context/QuizProvider"
+
 
 const WelcomeScreen = () => {
+
+  const {startQuiz} = useQuiz()
+
   return (
 
      <div className="bg-white shadow-xl w-[430px] px-9 pt-16 pb-10 rounded-xl flex flex-col justify-center items-center">
@@ -23,7 +28,9 @@ const WelcomeScreen = () => {
       </div>
       <button className="bg-indigo-600 text-white font-semibold w-2/3 py-[10px] rounded-xl mt-2 cursor-pointer
        hover:bg-indigo-700
-      ">
+      "
+      onClick={startQuiz}
+      >
         Start Quiz
       </button>
      </div>
