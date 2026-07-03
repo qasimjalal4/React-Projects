@@ -1,12 +1,13 @@
 import { QuizProvider } from "./context/QuizProvider"
-import WelcomeScreen from "./components/WelcomeScreen"
+import QuizApp from "./components/QuizApp"
 
 function App() {
   
+ 
 
   return (
     <QuizProvider>
-      <WelcomeScreen />
+       <QuizApp />
     </QuizProvider>
   )
 }
