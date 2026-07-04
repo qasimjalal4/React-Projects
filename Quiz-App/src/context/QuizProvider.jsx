@@ -13,12 +13,17 @@ export function QuizProvider({children}) {
     setGameStatus('playing')
   }
 
+  const nextQuestion = () => {
+    setCurrentQuestion(currentQuestion + 1)
+  }
+
   return (
     <QuizContext.Provider value={{
       gameStatus,
       startQuiz,
       questions,
-      currentQuestion
+      currentQuestion,
+      nextQuestion
     }}>
       {children}
     </QuizContext.Provider>
