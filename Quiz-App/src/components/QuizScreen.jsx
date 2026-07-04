@@ -1,5 +1,6 @@
 import { useQuiz } from "../context/QuizContext"
 import Header from "./Header";
+import ProgressBar from "./ProgressBar";
 
 const QuizScreen = () => {
 
@@ -11,6 +12,7 @@ const QuizScreen = () => {
     <div className="bg-white shadow-xl w-[430px] px-9 pt-5 pb-4 rounded-xl flex flex-col ">
  
      <Header />
+     <ProgressBar />
 
      <div className="bg-white w-full rounded-2xl shadow-xl p-8 max-w-lg">
       <span className="bg-indigo-100 text-indigo-600 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide">
