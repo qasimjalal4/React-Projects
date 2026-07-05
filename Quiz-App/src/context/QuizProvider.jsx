@@ -14,7 +14,11 @@ export function QuizProvider({children}) {
   }
 
   const nextQuestion = () => {
-    setCurrentQuestion(currentQuestion + 1)
+    if (currentQuestion + 1 >= questions.length) {
+      setGameStatus('finished')
+    } else {
+      setCurrentQuestion(prev => prev + 1)
+    }
   }
 
   return (
