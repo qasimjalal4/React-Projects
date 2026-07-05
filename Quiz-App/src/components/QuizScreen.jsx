@@ -1,35 +1,20 @@
-import { useQuiz } from "../context/QuizContext"
-import Header from "./Header";
+ import Header from "./Header";
 import ProgressBar from "./ProgressBar";
+import Question from "./Question";
 import Options from "./Options";
 import NextButton from "./NextButton";
 
 const QuizScreen = () => {
-
-  const {questions, currentQuestion} = useQuiz();
-
-  const q = questions[currentQuestion]
-
-   
-
+  
   return (
     <div className="bg-white shadow-xl w-[430px] px-9 pt-6 pb-6 rounded-xl flex flex-col ">
  
      <Header />
      <ProgressBar />
-
-     <div className="bg-white w-full rounded-2xl shadow-xl p-8 max-w-lg">
-      <span className="bg-indigo-100 text-indigo-600 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide">
-        {q.category}
-      </span>
-      <p className="text-xl font-bold text-gray-900 mt-4 leading-7">
-       {q.question}
-      </p>
-     </div>
-     
+     <Question /> 
      <Options />
-
      <NextButton />
+
     </div>
   )
 }
