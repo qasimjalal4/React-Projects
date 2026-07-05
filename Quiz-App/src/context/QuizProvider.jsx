@@ -21,13 +21,19 @@ export function QuizProvider({children}) {
     }
   }
 
+  const restartQuiz = () => {
+    setCurrentQuestion(0)
+    setGameStatus('playing')
+  }
+
   return (
     <QuizContext.Provider value={{
       gameStatus,
       startQuiz,
       questions,
       currentQuestion,
-      nextQuestion
+      nextQuestion,
+      restartQuiz
     }}>
       {children}
     </QuizContext.Provider>

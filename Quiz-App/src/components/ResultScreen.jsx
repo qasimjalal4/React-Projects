@@ -1,4 +1,9 @@
+import { useQuiz } from "../context/QuizContext";
+
 const ResultScreen = () => {
+
+  const {restartQuiz} = useQuiz();
+
   return (
     <div className="bg-white shadow-xl w-[430px] px-9 pt-12 pb-8 rounded-xl flex flex-col justify-center items-center">
       <h1 className="text-3xl font-bold text-gray-900 mb-3">Keep Studying!</h1>
@@ -35,6 +40,7 @@ const ResultScreen = () => {
       <button
         className="bg-indigo-600 text-white font-semibold text-lg w-2/3 mt-6 rounded-lg h-12
        hover:opacity-90 active:opacity-80 transition-opacity"
+       onClick={restartQuiz}
       >
         Play Again
       </button>
