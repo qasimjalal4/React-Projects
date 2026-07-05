@@ -1,6 +1,7 @@
 import { useQuiz } from "../context/QuizContext"
 import Header from "./Header";
 import ProgressBar from "./ProgressBar";
+import Options from "./Options";
 import NextButton from "./NextButton";
 
 const QuizScreen = () => {
@@ -9,8 +10,10 @@ const QuizScreen = () => {
 
   const q = questions[currentQuestion]
 
+   
+
   return (
-    <div className="bg-white shadow-xl w-[430px] px-9 pt-5 pb-4 rounded-xl flex flex-col ">
+    <div className="bg-white shadow-xl w-[430px] px-9 pt-6 pb-6 rounded-xl flex flex-col ">
  
      <Header />
      <ProgressBar />
@@ -24,6 +27,8 @@ const QuizScreen = () => {
       </p>
      </div>
      
+     <Options />
+
      <NextButton />
     </div>
   )
