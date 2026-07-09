@@ -4,6 +4,8 @@ const NextButton = () => {
   const { nextQuestion, currentQuestion, questions, selectedAnswer } =
     useQuiz();
 
+    
+
   return (
     <div className="w-full flex justify-center items-center h-10 mt-[10px]  ">
       {selectedAnswer !== null && (

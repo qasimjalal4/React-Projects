@@ -10,7 +10,7 @@ export function QuizProvider({children}) {
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [selectedAnswer, setSelectedAnswer] = useState(null)
   const [score, setScore] = useState(0)
- 
+   
 
   const startQuiz = () => {
     setGameStatus('playing')
@@ -56,7 +56,7 @@ export function QuizProvider({children}) {
       restartQuiz,
       selectAnswer,
       selectedAnswer,
-      score,
+      score
       
     }}>
       {children}
