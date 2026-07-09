@@ -110,6 +110,15 @@ beforeEach(() => {
     expect(screen.getByText('Loading...')).toBeInTheDocument()
   })
 
+   test('shows error message', () => {
+    githubHook.useGithubUser.mockReturnValue({
+      user: null,
+      isLoading: false,
+      error: 'User Not Found!'
+    })
+  })
+
+   expect(screen.getByText('User Not Found!')).toBeInTheDocument()
 
   
 })
