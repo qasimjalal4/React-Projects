@@ -21,7 +21,7 @@ export function QuizProvider({children}) {
       setGameStatus('finished')
     } else {
       setCurrentQuestion(prev => prev + 1)
-      
+      setSelectedAnswer(null)
     }
   }
 
@@ -40,6 +40,8 @@ export function QuizProvider({children}) {
   const restartQuiz = () => {
     setCurrentQuestion(0)
     setGameStatus('playing')
+    setSelectedAnswer(null)
+    setScore(0)
   }
  
 

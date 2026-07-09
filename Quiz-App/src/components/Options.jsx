@@ -5,7 +5,7 @@ import { useQuiz } from "../context/QuizContext";
 const Options = () => {
 
   const {questions, currentQuestion,selectAnswer,selectedAnswer } = useQuiz()
-
+ 
   const q = questions[currentQuestion]
 
   const options = q.options
@@ -13,8 +13,9 @@ const Options = () => {
   const getOptionsClass = (index) => {
 
     if(selectedAnswer === null) return 'border-gray-200 text-gray-700'
-    if(selectedAnswer === index) return 'border-green-500 text-green-600'
-    
+    if(index === q.answer) return 'border-green-500 text-green-600'
+    if(selectedAnswer === index) return 'border-red-500 text-red-600'
+
     return 'border-gray-200 text-white-700 opacity-40'
   }
    
