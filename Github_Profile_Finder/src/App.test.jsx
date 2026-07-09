@@ -1,7 +1,8 @@
-import { beforeEach, describe, expect, test } from "vitest";
+import { beforeEach, describe, expect, test,vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import App from "./App";
 import userEvent from "@testing-library/user-event";
+
 
 
 describe('App', () => {
@@ -43,5 +44,29 @@ describe('App', () => {
     await user.type(input,'octocat')
 
     expect(input).toHaveValue('octocat')
+  })
+
+
+  test('Showing alert message for empty input', async () => {
+
+    const alertSpy = vi.spyOn(window, 'alert').mockImplementation(() => {})
+
+    const input = screen.getByRole('textbox')
+
+    expect(input).toHaveValue('')
+
+    const button = screen.getByRole('button', {
+      name: 'Search'
+    })
+
+    await user.click(button)
+
+     
+
+    expect(alertSpy).toHaveBeenCalled()
+    expect(alertSpy).toHaveBeenCalledTimes(1)
+    expect(alertSpy).toHaveBeenCalledWith('Enter username!')
+
+    alertSpy.mockRestore()
   })
 })
