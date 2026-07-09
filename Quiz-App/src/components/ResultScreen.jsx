@@ -2,7 +2,13 @@ import { useQuiz } from "../context/QuizContext";
 
 const ResultScreen = () => {
 
-  const {restartQuiz,score} = useQuiz();
+  const {restartQuiz,score,questions} = useQuiz();
+
+  const total = questions.length
+  const wrong = total - score
+  const percent = Math.round((score / total) * 100)
+
+
 
   return (
     <div className="bg-white shadow-xl w-[430px] px-9 pt-12 pb-8 rounded-xl flex flex-col justify-center items-center">
@@ -16,21 +22,21 @@ const ResultScreen = () => {
 
       <div className="grid grid-cols-3 gap-3 mb-4">
         <div className="bg-green-50 border border-green-200 rounded-xl p-4 text-center">
-          <div className="text-2xl font-bold text-green-600">6</div>
+          <div className="text-2xl font-bold text-green-600">{score}</div>
           <div className="text-xs text-green-500 uppercase tracking-wide mt-1">
             Correct
           </div>
         </div>
 
         <div className="bg-red-50 border border-red-200 rounded-xl p-4 text-center">
-          <div className="text-2xl font-bold text-red-500">5</div>
+          <div className="text-2xl font-bold text-red-500">{wrong}</div>
           <div className="text-xs text-red-400 uppercase tracking-wide mt-1">
             Wrong
           </div>
         </div>
 
         <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-4 text-center">
-          <div className="text-2xl font-bold text-indigo-600">60%</div>
+          <div className="text-2xl font-bold text-indigo-600">{percent}%</div>
           <div className="text-xs text-indigo-400 uppercase tracking-wide mt-1">
             Accuracy
           </div>
