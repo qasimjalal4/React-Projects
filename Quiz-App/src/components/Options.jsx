@@ -14,6 +14,8 @@ const Options = () => {
 
     if(selectedAnswer === null) return 'border-gray-200 text-gray-700'
     if(selectedAnswer === index) return 'border-green-500 text-green-600'
+    
+    return 'border-gray-200 text-white-700 opacity-40'
   }
    
 
@@ -27,6 +29,7 @@ const Options = () => {
 
         return (
           <button
+           disabled={selectedAnswer !== null}
             key={option}
              className={`border-2   rounded-xl px-4 py-3 text-left font-medium  shadow-sm 
               ${getOptionsClass(index)}
