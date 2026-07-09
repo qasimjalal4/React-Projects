@@ -8,12 +8,14 @@ const ResultScreen = () => {
   const wrong = total - score
   const percent = Math.round((score / total) * 100)
 
-
+  const title = percent === 100 ? 'Perfect Score!': percent >= 70 ? 'Great Job!': percent >= 50 ? 'Not Bad!': 'Keep Studying!'
+  const sub =  percent === 100 ? 'You got every question right!': percent >= 70 ? 'You really know your stuff!':
+               percent >= 50 ? 'A little more practice': 'Don\'t give up - try again!'
 
   return (
     <div className="bg-white shadow-xl w-[430px] px-9 pt-12 pb-8 rounded-xl flex flex-col justify-center items-center">
-      <h1 className="text-3xl font-bold text-gray-900 mb-3">Keep Studying!</h1>
-      <p className="text-gray-500 mb-12">Dont give up - try again!</p>
+      <h1 className="text-3xl font-bold text-gray-900 mb-3">{title}</h1>
+      <p className="text-gray-500 mb-12">{sub}</p>
 
       <div className="bg-indigo-700 h-40 w-40 rounded-full flex flex-col justify-center items-center text-white mb-8">
         <span className="text-[40px] font-extrabold">{score}/10</span>
