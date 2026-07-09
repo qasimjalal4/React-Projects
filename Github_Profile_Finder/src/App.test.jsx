@@ -142,15 +142,15 @@ beforeEach(() => {
 
   setup()
 
-   expect(screen.getByText('The Octocat')).toBeInTheDocument()
+  expect(screen.getByText('The Octocat')).toBeInTheDocument()
 
-expect(screen.getByText('@octocat')).toBeInTheDocument()
+  expect(screen.getByText('@octocat')).toBeInTheDocument()
 
-expect(
-  screen.getByRole('button', {
+  expect(
+   screen.getByRole('button', {
     name: 'View on Github'
   })
-).toBeInTheDocument()
+  ).toBeInTheDocument()
   })
   
-})
+ })
