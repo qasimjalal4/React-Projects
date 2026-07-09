@@ -116,9 +116,41 @@ beforeEach(() => {
       isLoading: false,
       error: 'User Not Found!'
     })
+
+     expect(screen.getByText('User Not Found!')).toBeInTheDocument()
   })
 
-   expect(screen.getByText('User Not Found!')).toBeInTheDocument()
+   
 
+  test('renders Github user profile', () => {
+     githubHook.useGithubUser.mockReturnValue({
+      
+  user: {
+    name: "The Octocat",
+    login: "octocat",
+    location: "San Francisco",
+    bio: "GitHub mascot",
+    public_repos: 8,
+    followers: 120,
+    following: 5,
+    avatar_url: "...",
+    html_url: "https://github.com/octocat"
+    },
+    isLoading: false,
+    error: null
+  })
+
+  setup()
+
+   expect(screen.getByText('The Octocat')).toBeInTheDocument()
+
+expect(screen.getByText('@octocat')).toBeInTheDocument()
+
+expect(
+  screen.getByRole('button', {
+    name: 'View on Github'
+  })
+).toBeInTheDocument()
+  })
   
 })
