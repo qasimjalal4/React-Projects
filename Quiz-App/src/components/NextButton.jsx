@@ -3,7 +3,7 @@ import { useQuiz } from "../context/QuizContext"
 
 const NextButton = () => {
 
-  const {nextQuestion} = useQuiz()
+  const {nextQuestion, currentQuestion, questions} = useQuiz()
 
   return (
    <div className="w-full flex justify-center items-center"> 
@@ -12,7 +12,7 @@ const NextButton = () => {
      hover:opacity-90 active:opacity-80 transition-opacity
      "
      onClick={nextQuestion}
-    >Next</button>
+    >{(currentQuestion + 1) >= questions.length ? 'See Results': 'Next Question'}</button>
    </div> 
   )
 }
