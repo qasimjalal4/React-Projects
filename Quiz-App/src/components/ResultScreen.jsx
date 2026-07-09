@@ -2,7 +2,7 @@ import { useQuiz } from "../context/QuizContext";
 
 const ResultScreen = () => {
 
-  const {restartQuiz} = useQuiz();
+  const {restartQuiz,score} = useQuiz();
 
   return (
     <div className="bg-white shadow-xl w-[430px] px-9 pt-12 pb-8 rounded-xl flex flex-col justify-center items-center">
@@ -10,7 +10,7 @@ const ResultScreen = () => {
       <p className="text-gray-500 mb-12">Dont give up - try again!</p>
 
       <div className="bg-indigo-700 h-40 w-40 rounded-full flex flex-col justify-center items-center text-white mb-8">
-        <span className="text-[40px] font-extrabold">1/10</span>
+        <span className="text-[40px] font-extrabold">{score}/10</span>
         <span className="text-sm">Score</span>
       </div>
 
