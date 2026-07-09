@@ -21,7 +21,7 @@ export function QuizProvider({children}) {
       setGameStatus('finished')
     } else {
       setCurrentQuestion(prev => prev + 1)
-      showCorrect(false)
+      
     }
   }
 

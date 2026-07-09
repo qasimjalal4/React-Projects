@@ -4,13 +4,19 @@ import { useQuiz } from "../context/QuizContext";
 
 const Options = () => {
 
-  const {questions, currentQuestion,selectAnswer } = useQuiz()
+  const {questions, currentQuestion,selectAnswer,selectedAnswer } = useQuiz()
 
   const q = questions[currentQuestion]
 
   const options = q.options
  
+  const getOptionsClass = (index) => {
+
+    if(selectedAnswer === null) return 'border-gray-200 text-gray-700'
+    if(selectedAnswer === index) return 'border-green-500 text-green-600'
+  }
    
+
  
 
 
@@ -23,7 +29,7 @@ const Options = () => {
           <button
             key={option}
              className={`border-2   rounded-xl px-4 py-3 text-left font-medium  shadow-sm 
-          
+              ${getOptionsClass(index)}
              ` }
 
 
