@@ -1,6 +1,7 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 import { QuizContext } from "./QuizContext";
 import { questions } from "../data/quizQuestions";
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 
 
@@ -10,7 +11,7 @@ export function QuizProvider({children}) {
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [selectedAnswer, setSelectedAnswer] = useState(null)
   const [score, setScore] = useState(0)
-   
+  const [timeLeft, setTimeLeft] = useState(15) 
 
   const startQuiz = () => {
     setGameStatus('playing')
@@ -25,15 +26,15 @@ export function QuizProvider({children}) {
     }
   }
 
-  const selectAnswer = (index) => {
+ const selectAnswer = useCallback((index) => {
+
+    setSelectedAnswer(index)
+
     if (index === questions[currentQuestion].answer) {
-      setSelectedAnswer(index)
       setScore(prev => prev + 1)
-    } else {
-      setSelectedAnswer(index)
     }
 
-  }
+ }, [currentQuestion])
 
    
  
@@ -42,8 +43,34 @@ export function QuizProvider({children}) {
     setGameStatus('playing')
     setSelectedAnswer(null)
     setScore(0)
+    setTimeLeft(15)
   }
  
+
+  useEffect(() => {
+    if (gameStatus !== 'playing') return;
+    if (selectedAnswer !== null) return;
+
+    setTimeLeft(15)
+
+    const timer = setInterval(() => {
+      setTimeLeft(prev => {
+        if(prev <= 1) {
+          clearInterval(timer)
+          selectAnswer(questions[currentQuestion].answer)
+          return 0
+        }
+
+       return prev - 1
+      })
+
+    }, 1000)
+
+      return () => {
+        clearInterval(timer)
+      }
+    
+  }, [gameStatus,currentQuestion, selectedAnswer, selectAnswer])
 
 
   return (
@@ -56,7 +83,8 @@ export function QuizProvider({children}) {
       restartQuiz,
       selectAnswer,
       selectedAnswer,
-      score
+      score,
+      timeLeft
       
     }}>
       {children}
