@@ -14,7 +14,7 @@ const ProfileCard = ({user}) => {
      <div className="w-full">
      <div className="  flex  pt-5 pl-4">
       <div className="w-[160px]" >
-       <img src={user.avatar_url} height={140} width={140} />
+       <img src={user.avatar_url} height={140} width={140} alt={`${user.login} avatar`} />
       </div>
       <div className="flex flex-col flex-1 gap-2">
         <div className="text-2xl font-bold">
@@ -33,7 +33,9 @@ const ProfileCard = ({user}) => {
     </div>
 
     <div className=" flex mt-3 ml-3 mr-3  gap-3">
-        <div className="flex-1 flex flex-col border border-gray-200 justify-center items-center py-2">
+        <div 
+        data-testid="public-repos-card"
+        className="flex-1 flex flex-col border border-gray-200 justify-center items-center py-2">
           <span className="font-semibold text-lg">
             Public Repos
           </span>
@@ -41,7 +43,9 @@ const ProfileCard = ({user}) => {
             {user.public_repos}
           </span>
         </div>
-        <div  className="flex-1 flex flex-col border border-gray-200 justify-center items-center py-2">
+        <div
+         data-tesid="followers-card"
+        className="flex-1 flex flex-col border border-gray-200 justify-center items-center py-2">
           <span className="font-semibold text-lg">
             Followers
           </span>
@@ -49,7 +53,9 @@ const ProfileCard = ({user}) => {
             {user.followers}
           </span>
         </div>
-        <div  className="flex-1 flex flex-col border border-gray-200 justify-center items-center py-2">
+        <div
+         data-tesid="following-card "
+        className="flex-1 flex flex-col border border-gray-200 justify-center items-center py-2">
           <span className="font-semibold text-lg">
             Following
           </span>
