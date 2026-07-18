@@ -2,6 +2,7 @@ import { describe, test, expect, beforeEach } from "vitest";
 import { render, screen } from "@testing-library/react";
 import App from "./App";
 import userEvent from "@testing-library/user-event";
+import { use } from "react";
 
 
 describe('App', () => {
@@ -61,6 +62,28 @@ describe('App', () => {
     })
 
     expect(button).toBeEnabled()
+
+  })
+
+  test('swap selectors', async () => {
+
+  //  const selectors = screen.getAllByRole('combobox')
+
+   // const fromSelect = selectors[0]
+  //  const toSelect = selectors[1]
+
+    expect(fromSelect).toHaveValue('USD')
+    expect(toSelect).toHaveValue('PKR')
+
+    const swapBtn = screen.getByRole('button', {
+      name: 'Swap'
+    })
+
+
+    await user.click(swapBtn)
+
+    expect(fromSelect).toHaveValue('PKR')
+     expect(toSelect).toHaveValue('USD')
 
   })
 })

@@ -3,9 +3,8 @@
 const CurrencySelector = ({label,options,value,onChange}) => {
   return (
     <>
-     <label htmlFor={label}>{label}</label>
+     <label>{label}</label>
      <select
-     id={label}
      value={value} onChange={event => onChange(event.target.value)}
       className="w-full p-2 mt-2 mb-3 rounded-md border border-[#ddd] outline-none"
      >
