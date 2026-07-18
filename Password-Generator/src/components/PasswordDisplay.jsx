@@ -35,7 +35,11 @@ const PasswordDisplay = ({password}) => {
        readOnly
       />
       <button
-       className="bg-[#1069f8] text-white border-none px-4 py-[6px] rounded-lg font-bold text-[15px] cursor-pointer ml-1"
+       className={`text-white border-none px-4 py-[6px] rounded-lg font-bold text-[15px] cursor-pointer ml-1
+
+        ${isCopied ? 'bg-green-500': 'bg-[#1069f8]' }
+       `}
+
        disabled={!password || password.includes('Please')}
        onClick={Copy}
       >{isCopied ? 'Copied' : 'Copy'}

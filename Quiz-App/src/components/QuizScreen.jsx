@@ -7,7 +7,7 @@ import NextButton from "./NextButton";
 const QuizScreen = () => {
   
   return (
-    <div className="bg-white shadow-xl w-[430px] px-9 pt-6 pb-6 rounded-xl flex flex-col ">
+    <div className="bg-white shadow-xl w-[430px] px-9 py-6 rounded-xl flex flex-col ">
  
      <Header />
      <ProgressBar />

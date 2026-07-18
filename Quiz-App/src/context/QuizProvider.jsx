@@ -84,8 +84,7 @@ export function QuizProvider({children}) {
       selectAnswer,
       selectedAnswer,
       score,
-      timeLeft
-      
+      timeLeft     
     }}>
       {children}
     </QuizContext.Provider>
