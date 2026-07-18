@@ -1,12 +1,17 @@
 import { describe, test, expect, beforeEach } from "vitest";
 import { render, screen } from "@testing-library/react";
 import App from "./App";
+import userEvent from "@testing-library/user-event";
 
 
 describe('App', () => {
 
+  let user;
+
   beforeEach(() => {
     render(<App />)
+
+    user = userEvent.setup()
   })
 
 
@@ -41,5 +46,21 @@ describe('App', () => {
     })
 
     expect(button).toBeDisabled() 
+  })
+
+  test("enables Convert button after entering a valid amount", async () => {
+
+    const input = screen.getByRole('spinbutton')
+
+    await user.type(input, "100")
+
+    expect(input).toHaveValue(100)
+
+    const button = screen.getByRole('button', {
+      name: 'Convert'
+    })
+
+    expect(button).toBeEnabled()
+
   })
 })
