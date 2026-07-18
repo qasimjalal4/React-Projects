@@ -33,8 +33,9 @@ function App() {
   return (
     <div className="bg-white w-96 p-8 rounded-xl shadow-lg">
       <h1 className="text-2xl font-bold text-center mb-8 pt-2">Currency Converter</h1>
-      <label>Amount</label>
+      <label htmlFor="amount">Amount</label>
       <input type="number"
+        id="amount"
         onChange={(event) => setAmount(event.target.value)}
         value={amount}
        placeholder="Enter amount"
