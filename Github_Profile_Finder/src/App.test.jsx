@@ -1,5 +1,5 @@
 import * as githubHook from "./Hooks/useGithubUser"
-import { beforeEach, describe, expect, test,vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, test,vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import App from "./App";
 import userEvent from "@testing-library/user-event";
@@ -18,7 +18,11 @@ beforeEach(() => {
       isLoading: false,
       error: null
     })
-})  
+})
+
+afterEach(() => {
+  vi.clearAllMocks()
+})
 
  function setup() {
 
