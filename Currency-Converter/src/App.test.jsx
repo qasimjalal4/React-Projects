@@ -55,8 +55,10 @@ describe('App', () => {
   })
 
 
-  test('Convert button is disable initially',  () => {
+  test('Convert button is disabled initially',  () => {
  
+
+    setup()
 
     const button = screen.getByRole('button', {
       name: 'Convert'
@@ -67,7 +69,7 @@ describe('App', () => {
   })
 
 
-  test('Convert button is enable after entering valid amount', async () => {
+  test('Convert button is enabled after entering valid amount', async () => {
 
     const {user} = setup()
 
@@ -78,7 +80,7 @@ describe('App', () => {
     expect(input).toHaveValue(10)
 
     const button = screen.getByRole('button', {
-      name: 'Convert'
+      name: '/convert/i'
     })
 
     expect(button).toBeEnabled()
