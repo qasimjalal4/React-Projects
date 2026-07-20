@@ -2,9 +2,14 @@ import { describe, test, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import App from "./App";
 import userEvent from "@testing-library/user-event";
+import * as currencyHook from './hooks/useCurrencyInfo'
 
  
 
+vi.mock('./hooks/useCurrencyInfo', () => ({
+
+  useCurrencyInfo: vi.fn()
+}))
 
  
 
@@ -102,4 +107,26 @@ describe('App', () => {
    expect(toSelect).toHaveValue('USD')
   })
   
+  test('converts USD to PKR', async () => {
+
+    currencyHook.useCurrencyInfo.mockReturnValue({
+      PKR: 280
+    })
+
+    const { user } = setup()
+
+     const input = screen.getByRole('spinbutton')
+
+     await user.type(input, '2')
+
+     const button = screen.getByRole('button', {
+      name: 'Convert'
+     })
+
+     await user.click(button)
+
+     expect(screen.getByText('2 USD = 560.00 PKR')).toBeInTheDocument()
+    
+  })
+
 })
