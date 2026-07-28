@@ -1,4 +1,4 @@
-import { describe, test, expect, vi } from "vitest";
+import { describe, test, expect, vi, afterEach } from "vitest";
 import { render, screen } from "@testing-library/react";
 import App from "./App";
 import userEvent from "@testing-library/user-event";
@@ -129,6 +129,11 @@ describe('App', () => {
 
      expect(screen.getByText('2 USD = 560.00 PKR')).toBeInTheDocument()
     
+  })
+
+
+  afterEach(() => {
+    vi.clearAllMocks()
   })
 
 })

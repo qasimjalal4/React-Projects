@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/set-state-in-effect */
 import { QuizContext } from "./QuizContext";
 import { questions } from "../data/quizQuestions";
 import { useCallback, useEffect, useState } from "react";
@@ -51,6 +50,7 @@ export function QuizProvider({children}) {
     if (gameStatus !== 'playing') return;
     if (selectedAnswer !== null) return;
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setTimeLeft(15)
 
     const timer = setInterval(() => {
