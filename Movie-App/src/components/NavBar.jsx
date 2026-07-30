@@ -6,7 +6,7 @@ const NavBar = () => {
 
 
   return (
-    <nav className="w-full h-[88px] flex  justify-between items-center px-[72px] border-b-[1px] border-b-white shadow-sm">
+    <nav className="w-full h-[88px] flex sticky top-0 z-50 bg-black justify-between items-center px-16 border-b-[1px] border-b-white shadow-sm">
      <div className="text-[27px] font-bold">
       <span>Movie</span><span className="text-red-500">Scope</span>
      </div>

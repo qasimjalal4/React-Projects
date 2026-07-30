@@ -8,7 +8,7 @@ const HomePage = () => {
   return (
     <div className="pt-6 text-white">
      <SearchBar query={query} setQuery={setQuery} />
-      HomePage
+       HomePage
     </div>
   )
 }
