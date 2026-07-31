@@ -53,7 +53,7 @@ export function useMovies(query) {
 
       } catch(err) {
 
-        if(err.name === 'AbortErrot') return
+        if(err.name === 'AbortError') return
 
         setError(err.message)
 
