@@ -8,7 +8,7 @@ const MovieCard = ({movie}) => {
        <div
             className="group h-[420px] rounded-md border-[1.5px] border-white"
           >
-            <div className=" overflow-hidden">
+            <div className="relative overflow-hidden">
               <img
                 src={
                   movie.poster_path
@@ -19,6 +19,12 @@ const MovieCard = ({movie}) => {
                 className="h-[335px] w-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
 
+                 <button
+                 className="absolute top-3 right-3 flex h-9 w-9 items-center justify-center
+                 rounded-full bg-black/60 text-xl text-white transition hover:scale-110"
+                 >
+                 🤍
+                </button>
               
             </div>
 
