@@ -1,7 +1,12 @@
+import { useMovieContext } from "../context/MovieContext";
 
 const MovieCard = ({movie}) => {
 
     const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
+
+    const {addFavourite, removeFavourite, isFavourite} = useMovieContext()
+
+    const favorite = isFavourite(movie.id)
 
   return (
     <>
@@ -22,8 +27,15 @@ const MovieCard = ({movie}) => {
                  <button
                  className="absolute top-3 right-3 flex h-9 w-9 items-center justify-center
                  rounded-full bg-black/60 text-xl text-white transition hover:scale-110"
+                 onClick={() => {
+                  if (favorite) {
+                    removeFavourite(movie.id)
+                  } else {
+                    addFavourite(movie)
+                  }
+                 }}
                  >
-                 🤍
+                  {favorite ? "❤️" : "🤍"}
                 </button>
               
             </div>

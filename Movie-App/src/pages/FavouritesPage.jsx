@@ -15,11 +15,16 @@ const FavouritesPage = () => {
   }
 
   return (
-    <div className="grid grid-cols-6 gap-x-3 gap-y-4 px-8 py-12 text-white">
+   <>
+    <div className="font-bold text-xl pt-6 pb-5 ml-5">
+      Your Favourites: 
+    </div>
+    <div className="grid grid-cols-6 gap-x-3 gap-y-4 px-6 py-12 text-white">
       {favourites.map((favouriteMovie) => (
         <MovieCard key={favouriteMovie.id} movie={favouriteMovie} />
       ))}
     </div>
+   </> 
   );
 };
 
