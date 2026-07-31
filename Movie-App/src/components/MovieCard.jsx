@@ -8,7 +8,7 @@ const MovieCard = ({movie}) => {
        <div
             className="group h-[420px] rounded-md border-[1.5px] border-white"
           >
-            <div className="overflow-hidden">
+            <div className=" overflow-hidden">
               <img
                 src={
                   movie.poster_path
@@ -18,6 +18,8 @@ const MovieCard = ({movie}) => {
                 alt={movie.title}
                 className="h-[335px] w-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
+
+              
             </div>
 
             <p className="mt-2 pl-2 text-sm transition-colors duration-300 group-hover:text-red-500">
