@@ -14,6 +14,19 @@ const HomePage = () => {
     <div className="pt-6 text-white">
      <SearchBar query={query} setQuery={setQuery} />
      <div className="py-12 px-8 grid grid-cols-6 gap-x-3 gap-y-4">
+
+      {isLoading && (
+        <p className="col-span-6 text-center text-lg font-semibold">
+          Loading...
+        </p>
+       )}
+
+       {error && (
+        <p className="col-span-6 text-center text-lg font-semibold text-red-500">
+          Failed to fetch movies.
+        </p>
+       )}
+
       {movies.map((movie) => {
         return (
           <div
