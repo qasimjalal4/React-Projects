@@ -2,6 +2,7 @@
 import SearchBar from "../components/SearchBar";
 import { useMovies } from "../hooks/useMovies";
 import MovieCard from "../components/MovieCard";
+import NavBar from '../components/NavBar'
 
 const HomePage = () => {
   const [query, setQuery] = useState("");
@@ -12,41 +13,52 @@ const HomePage = () => {
 
   if (isLoading) {
     return (
-      <div className="pt-6 text-white">
-        <SearchBar query={query} setQuery={setQuery} />
+     <>
+       <NavBar />
+        <div className="pt-6 text-white">
+         <SearchBar query={query} setQuery={setQuery} />
 
-        <p className="mt-10 text-center text-lg font-semibold">
-          Loading...
-        </p>
-      </div>
+         <p className="mt-10 text-center text-lg font-semibold">
+           Loading...
+         </p>
+        </div>
+     </>
     );
   }
 
   if (error) {
     return (
-      <div className="pt-6 text-white">
-        <SearchBar query={query} setQuery={setQuery} />
+      <>
+        <NavBar />
+        <div className="pt-6 text-white">
+         <SearchBar query={query} setQuery={setQuery} />
 
-        <p className="mt-10 text-center text-lg font-semibold text-red-500">
-          Failed to fetch movies.
-        </p>
-      </div>
+         <p className="mt-10 text-center text-lg font-semibold text-red-500">
+           Failed to fetch movies.
+         </p>
+       </div>
+      </>
     );
   }
 
   if (movies.length === 0) {
     return (
-      <div className="pt-6 text-white">
-        <SearchBar query={query} setQuery={setQuery} />
+      <>
+        <NavBar />
+        <div className="pt-6 text-white">
+         <SearchBar query={query} setQuery={setQuery} />
 
-        <p className="mt-10 text-center text-lg font-semibold">
-          🎬 No movies found.
-        </p>
-      </div>
+         <p className="mt-10 text-center text-lg font-semibold">
+           🎬 No movies found.
+         </p>
+        </div>
+      </>
     );
   }
 
   return (
+   <>
+    <NavBar />
     <div className="pt-6 text-white">
       <SearchBar query={query} setQuery={setQuery} />
 
@@ -58,6 +70,7 @@ const HomePage = () => {
         ))}
       </div>
     </div>
+   </>
   );
 };
 

@@ -1,4 +1,5 @@
  import MovieCard from "../components/MovieCard";
+import NavBar from "../components/NavBar";
 import { useMovieContext } from "../context/MovieContext";
 
 const FavouritesPage = () => {
@@ -6,16 +7,20 @@ const FavouritesPage = () => {
 
   if (favourites.length === 0) {
     return (
-      <div className="flex h-[70vh] items-center justify-center">
-        <p className="text-xl font-semibold text-gray-400">
-          ❤️ No favorite movies yet.
-        </p>
-      </div>
+      <>
+        <NavBar />
+        <div className="flex h-[70vh] items-center justify-center">
+         <p className="text-xl font-semibold text-gray-400">
+           ❤️ No favorite movies yet.
+         </p>
+        </div>
+      </>
     );
   }
 
   return (
    <>
+    <NavBar />
     <div className="font-bold text-xl pt-6 pb-5 ml-5">
       Your Favourites: 
     </div>

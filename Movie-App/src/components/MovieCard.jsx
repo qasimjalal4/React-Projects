@@ -21,7 +21,7 @@ const MovieCard = ({movie}) => {
                     : "/placeholder.jpg"
                 }
                 alt={movie.title}
-                className="h-[335px] w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                className="h-[335px] w-full  object-cover transition-transform duration-300 group-hover:scale-105"
               />
 
                  <button
