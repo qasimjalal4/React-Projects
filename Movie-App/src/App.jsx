@@ -1,5 +1,6 @@
 
 import HomePage from "./pages/HomePage"
+import MovieDetailsPage from "./pages/MovieDetailsPage"
 import FavouritesPage from "./pages/FavouritesPage"
 import { BrowserRouter, Route, Routes } from "react-router"
 
@@ -10,6 +11,7 @@ function App() {
     <BrowserRouter>
      <Routes>
       <Route index element={ <HomePage /> } />
+      <Route path="/movie/:id" element={ <MovieDetailsPage /> } />
       <Route path="/favourites" element={ <FavouritesPage /> } />
      </Routes>
 

@@ -1,4 +1,5 @@
 import { useMovieContext } from "../context/MovieContext";
+import { Link } from "react-router-dom";
 
 const MovieCard = ({movie}) => {
 
@@ -40,9 +41,11 @@ const MovieCard = ({movie}) => {
               
             </div>
 
-            <p className="mt-2 pl-2 text-sm transition-colors duration-300 group-hover:text-red-500">
+           <Link to={`/movie/${movie.id}`}>
+             <p className="mt-2 pl-2 text-sm transition-colors duration-300 group-hover:text-red-500">
               {movie.title}
             </p>
+           </Link>
 
             <div className="mt-2 flex items-center justify-between px-[10px] text-sm text-gray-400">
               <span>⭐ {movie.vote_average.toFixed(1)}</span>
