@@ -45,8 +45,23 @@ const MovieDetailsPage = () => {
   },[id])
 
 
+  if(isLoading) {
+    return (
+        <p className="text-lg font-semibold mt-10 text-center">Loading...</p>
+    )
+  }
+
+  if(error) {
+    return (
+      <div className="flex h-full w-full justify-center items-center">
+        <p className="text-lg font-semibold text-red-500">{error}</p>
+      </div>
+    )
+  }
+
+
   return (
-    <div className="p-8 text-white">MovieDetailsPage</div>
+    <div className=""></div>
   )
 }
 
