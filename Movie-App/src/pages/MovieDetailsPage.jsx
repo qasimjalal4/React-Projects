@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 
 const MovieDetailsPage = () => {
+
+  const navigate = useNavigate()
 
   const API_KEY = 'a4b6791bf6e7d9111aa36e1e14ce2675';
   const BACKDROP_BASE_URL =
@@ -70,6 +72,10 @@ const MovieDetailsPage = () => {
             alt={movie.title}
             className="absolute inset-0 w-full h-full object-cover"
            />
+           <button onClick={() => navigate(-1)}
+            className="absolute top-6 left-6 z-10 bg-black/60 px-4 py-2 rounded-full
+             cursor-pointer text-white transition hover:bg-red-500 backdrop-blur-sm "
+            >← Back</button>
          </div>
       )}
     </>
