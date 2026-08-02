@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom"
 const MovieDetailsPage = () => {
 
   const API_KEY = 'a4b6791bf6e7d9111aa36e1e14ce2675';
+  const BACKDROP_BASE_URL =
+    "https://image.tmdb.org/t/p/original";
 
   const { id } = useParams()
 
@@ -61,7 +63,16 @@ const MovieDetailsPage = () => {
 
 
   return (
-    <div className=""></div>
+    <>
+     {movie && (
+         <div className="relative h-[825px]">
+           <img src={`${BACKDROP_BASE_URL}${movie.backdrop_path}`}
+            alt={movie.title}
+            className="absolute inset-0 w-full h-full object-cover"
+           />
+         </div>
+      )}
+    </>
   )
 }
 
