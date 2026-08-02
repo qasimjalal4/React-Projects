@@ -42,7 +42,7 @@ const MovieCard = ({movie}) => {
             </div>
 
            <Link to={`/movie/${movie.id}`}>
-             <p className="mt-2 pl-2 text-sm transition-colors duration-300 group-hover:text-red-500">
+             <p className="mt-2 pl-2 hover:underline text-sm transition-colors duration-300 group-hover:text-red-500">
               {movie.title}
             </p>
            </Link>
