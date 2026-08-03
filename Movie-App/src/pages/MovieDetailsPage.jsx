@@ -125,6 +125,9 @@ const MovieDetailsPage = () => {
                       ? "❤️ Remove from Favorites"
                       : "🤍 Add to Favorites"}
                     </button>
+                    <button className="ml-10 text-lg hover:border-b-2  hover:text-gray-300">
+                      ▶ Watch Trailer  
+                    </button>
                 </div>
               </div>
 
