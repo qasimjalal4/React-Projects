@@ -13,7 +13,7 @@ const MovieDetailsPage = () => {
   const IMAGE_BASE_URL =
     "https://image.tmdb.org/t/p/w500";
 
-  
+  const {addFavourite, removeFavourite, isFavourite} = useMovieContext()  
     
   const { id } = useParams()
 
@@ -21,7 +21,7 @@ const MovieDetailsPage = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState(null)
 
-  
+  const favourite = movie ? isFavourite(movie.id) : false
 
   useEffect(() => {
 
@@ -92,7 +92,7 @@ const MovieDetailsPage = () => {
                  alt={movie.title}
                  className="h-[400px] w-[270px] object-cover shadow-2xl rounded-lg"
                 />
-                <div className="">
+                <div className="max-w-2xl self-end">
                   <h1 className="text-5xl font-bold">{movie.title}</h1>
                   <div className="flex mt-5 gap-4 items-center text-gray-300">
                    <span>⭐ {movie.vote_average.toFixed(1)}</span>
@@ -111,6 +111,20 @@ const MovieDetailsPage = () => {
                   <p
                    className="mt-5 text-gray-300 leading-7"
                   >{movie.overview}</p>
+                  <button
+                    onClick={() => {
+                      if (favourite) {
+                        removeFavourite(movie.id);
+                      } else {
+                        addFavourite(movie);
+                      }
+                    }}
+                    className="mt-6 rounded-lg bg-red-500 px-5 py-3 font-semibold transition hover:bg-red-600"
+                    >
+                    {favourite
+                      ? "❤️ Remove from Favorites"
+                      : "🤍 Add to Favorites"}
+                    </button>
                 </div>
               </div>
 
