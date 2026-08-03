@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
+import { useMovieContext } from "../context/MovieContext";
 
 const MovieDetailsPage = () => {
 
@@ -9,11 +10,18 @@ const MovieDetailsPage = () => {
   const BACKDROP_BASE_URL =
     "https://image.tmdb.org/t/p/original";
 
+  const IMAGE_BASE_URL =
+    "https://image.tmdb.org/t/p/w500";
+
+  
+    
   const { id } = useParams()
 
   const [movie, setMovie] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState(null)
+
+  
 
   useEffect(() => {
 
@@ -74,8 +82,20 @@ const MovieDetailsPage = () => {
            />
            <button onClick={() => navigate(-1)}
             className="absolute top-6 left-6 z-10 bg-black/60 px-4 py-2 rounded-full
-             cursor-pointer text-white transition hover:bg-red-500 backdrop-blur-sm "
+             cursor-pointer text-white transition hover:bg-red-500 backdrop-blur-sm"
             >← Back</button>
+
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent">
+             <div className="absolute flex inset-0 items-end">
+              <div className="flex px-12 pb-12 gap-8">
+                <img src={`${IMAGE_BASE_URL}${movie.poster_path}`}
+                 alt={movie.title}
+                 className="h-[400px] w-[270px] object-cover shadow-2xl rounded-lg"
+                />
+              </div>
+
+             </div>
+            </div>
          </div>
       )}
     </>
