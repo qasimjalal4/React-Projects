@@ -92,6 +92,26 @@ const MovieDetailsPage = () => {
                  alt={movie.title}
                  className="h-[400px] w-[270px] object-cover shadow-2xl rounded-lg"
                 />
+                <div className="">
+                  <h1 className="text-5xl font-bold">{movie.title}</h1>
+                  <div className="flex mt-5 gap-4 items-center text-gray-300">
+                   <span>⭐ {movie.vote_average.toFixed(1)}</span>
+                   <span>{movie.release_date.split("-")[0]}</span>
+                   <span>{movie.runtime} min</span>
+                  </div>
+                  <div className="flex gap-3 mt-4">
+                   {movie.genres.map((genre) => {
+                    return (
+                      <span key={genre.id} className="
+                       border border-white/30 px-3 py-1 rounded-full text-sm
+                      ">{genre.name}</span>
+                    )
+                   })}
+                  </div>
+                  <p
+                   className="mt-5 text-gray-300 leading-7"
+                  >{movie.overview}</p>
+                </div>
               </div>
 
              </div>
