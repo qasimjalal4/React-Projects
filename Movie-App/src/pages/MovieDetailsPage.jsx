@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { useMovieContext } from "../context/MovieContext";
+import TrailerModal from "../components/TrailerModal";
 
 const MovieDetailsPage = () => {
 
@@ -20,6 +21,8 @@ const MovieDetailsPage = () => {
   const [movie, setMovie] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState(null)
+  const [trailer, setTrailer] = useState(null)
+  const [showTrailer, setShowTrailer] = useState(false)
 
   const favourite = movie ? isFavourite(movie.id) : false
 
@@ -55,6 +58,38 @@ const MovieDetailsPage = () => {
     fetchMovieDetails()
 
   },[id])
+
+
+  useEffect(() => {
+
+    async function fetchTrailer() {
+
+      try {
+          const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}`)
+
+      
+          if (!response.ok) {
+           throw new Error("Failed to fetch trailer");
+          }
+   
+         const data = await response.json()
+
+        const trailerVideo = data.results.find(video => 
+          video.type === 'Trailer' &&
+          video.site === 'YouTube'
+        )
+
+         setTrailer(trailerVideo || null)
+      
+      } catch(error) {
+
+        console.error(error.message)
+      }
+    }
+
+    fetchTrailer()
+
+  }, [id])
 
 
   if(isLoading) {
@@ -125,9 +160,13 @@ const MovieDetailsPage = () => {
                       ? "❤️ Remove from Favorites"
                       : "🤍 Add to Favorites"}
                     </button>
-                    <button className="ml-10 text-lg hover:border-b-2  hover:text-gray-300">
-                      ▶ Watch Trailer  
-                    </button>
+                    {trailer && (
+                      <button className="ml-10 text-lg hover:border-b-2  hover:text-gray-300"
+                       onClick={() => setShowTrailer(true)}
+                      >
+                        ▶ Watch Trailer  
+                     </button>
+                    )}
                 </div>
               </div>
 
@@ -135,6 +174,10 @@ const MovieDetailsPage = () => {
             </div>
          </div>
       )}
+     
+     {trailer && showTrailer && (
+      <TrailerModal trailer={trailer} showTrailer={showTrailer} setShowTrailer={setShowTrailer} movieTitle={movie.title}  />
+     )} 
     </>
   )
 }
