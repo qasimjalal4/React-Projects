@@ -8,6 +8,7 @@ vi.mock('../context/QuizContext', () => ({
   useQuiz: vi.fn()
 }))
 
+
 vi.mock('./WelcomeScreen', () => ({
   default: () => <div>WelcomeScreen</div>
 }))

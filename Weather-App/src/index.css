@@ -4,3 +4,22 @@
 
 
  
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  
+}
+
+body {
+   min-height: 100vh;
+   transition: background 0.8s ease;
+}
+
+ 
+
+body.sunny  { background: linear-gradient(135deg, #fbbf24, #f97316); }
+body.cloudy { background: linear-gradient(135deg, #64748b, #334155); }
+body.rainy  { background: linear-gradient(135deg, #1e3a5f, #0f172a); }
+body.snowy  { background: linear-gradient(135deg, #bfdbfe, #60a5fa); }
+body.foggy  { background: linear-gradient(135deg, #94a3b8, #475569); }

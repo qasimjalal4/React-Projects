@@ -1,4 +1,4 @@
- import Header from "./Header";
+import Header from "./Header";
 import ProgressBar from "./ProgressBar";
 import Question from "./Question";
 import Options from "./Options";
