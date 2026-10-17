@@ -85,6 +85,33 @@ describe('Options', () => {
   })
 
 
+    test('disable all options after anwser is selected', async () => {
+
+    
+    const selectAnswer = vi.fn()
+
+    useQuiz.mockReturnValue({
+      currentQuestion: 0,
+      questions: questions,
+      selectAnswer: selectAnswer,
+      selectedAnswer: 2
+    })
+
+    
+    render(<Options />)
+
+    const buttons = screen.getAllByRole('button')
+
+    expect(buttons.forEach((button) => {
+      expect(button.toBeDisabled())
+    }))
+
+  })
+
+
+   
+
+
  
 
  
