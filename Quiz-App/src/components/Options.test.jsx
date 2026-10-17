@@ -109,6 +109,28 @@ describe('Options', () => {
   })
 
 
+
+  test('shows green styling when the correct answer is selected', () => {
+
+    useQuiz.mockReturnValue({
+      currentQuestion: 0,
+      questions: questions,
+      selectAnswer: vi.fn(),
+      selectedAnswer: 2
+    })
+
+    render(<Options />)
+
+    const buttons = screen.getAllByRole('buttons')
+    const correctButton = buttons[2]
+
+    expect(correctButton).toHaveClass('border-green-500')
+    expect(correctButton).toHaveClass('text-green-600')
+
+  })
+ 
+
+
    
 
 
