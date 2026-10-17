@@ -149,9 +149,34 @@ describe('Options', () => {
   })
 
    
+  
+  test('turns correct option green after 1 sec when wrong option is selected', () => {
+
+    vi.useFakeTimers()
+
+    vi.mockReturnValue({
+      currentQuestion: 0,
+      questions: questions,
+      selectAnswer: vi.fn(),
+      selectedAnswer: 1
+    })
+
+    render(<Options />)
+
+    const buttons = screen.getAllByRole('button')
+    const correctOption = buttons[2]
+    
+    expect(correctOption).not.toHaveClass('border-green-500')
+
+    vi.advanceTimersByTime(1000)
+
+    expect(correctOption).toHaveClass('border-green-500')
+    expect(correctOption).toHaveClass('text-green-600')
+
+    vi.useRealTimers()
 
 
- 
+  })
 
  
 })
