@@ -130,6 +130,23 @@ describe('Options', () => {
   })
  
 
+  
+  test('shows red styling when wrong answer is selected', () => {
+
+    useQuiz.mockReturnValue({
+      currentQuestion: 0,
+      questions: questions,
+      selectAnswer: vi.fn(),
+      selectedAnswer: 1
+    })
+
+
+    const buttons = screen.getAllByRole('buttons')
+    const wrongButton = buttons[1]
+
+    expect(wrongButton).toHaveClass('bg-red-500')
+    expect(wrongButton).toHaveClass('text-red-600')
+  })
 
    
 
