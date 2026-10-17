@@ -57,5 +57,35 @@ describe('Options', () => {
 
   })
 
+  
+
+  test('calls selectAnswer with the correct index when an option is clicked', async () => {
+
+    const user = userEvent.setup();
+    const selectAnwser = vi.fn();
+
+
+    useQuiz.mockReturnValue({
+      currentQuestion: 0,
+      questions: questions,
+      selectAnwser: selectAnwser,
+      selectedAnswer: null
+    })
+
+    render(<Options />)
+
+    const buttons = screen.getAllByRole('button')
+    const selectedButton = buttons[2]
+
+    await user.click(selectedButton)
+
+    expect(selectAnwser).toHaveBeenCalled()
+    expect(selectAnwser).toHaveBeenCalledWith(2)
+
+  })
+
+
+ 
+
  
 })
