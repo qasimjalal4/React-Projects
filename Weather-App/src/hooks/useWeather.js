@@ -22,6 +22,7 @@ export function useWeather(query) {
 
   },[query])
 
+
   useEffect(() => {
 
     if (!debouncedQuery) return;
@@ -65,7 +66,7 @@ export function useWeather(query) {
 
     return () => controller.abort()
 
-  },[debouncedQuery])
+  },[debouncedQuery, query])
 
 
   return { weather,isLoading,error }
