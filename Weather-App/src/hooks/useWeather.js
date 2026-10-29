@@ -1,22 +1,33 @@
 import { useState, useEffect } from "react";
 
-
 const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
+
 
 
 export function useWeather(query) {
 
-  const [weather, setWeather] = useState(null)
-  const [isLoading, setIsLoading] = useState(false)
-  const [error, setError] = useState(null)
+  const [weather, setWeather] = useState(null);
+  const [debouncedQuery, setDebouncedQuery] = useState(query);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
 
   useEffect(() => {
 
+    const timer = setTimeout(() => {
+      setDebouncedQuery(query)
+    }, 500)
 
-    if(!query) return;
+    return () => clearTimeout(timer)
 
-    const controller = new AbortController()
+  },[query])
+
+  useEffect(() => {
+
+    if (!debouncedQuery) return;
+
+    const url = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${query}&days=7&aqi=no&alerts=no`;
+    const controller = new AbortController();
 
     async function fetchWeather() {
 
@@ -25,36 +36,41 @@ export function useWeather(query) {
 
       try {
 
-        const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${query}&days=5&aqi=no&alerts=no`,{
+        const response = await fetch(url, {
           signal: controller.signal
-        })
+        });
 
         if(!response.ok) {
           throw new Error('City not found!')
         }
 
-        const data = await response.json()
+        const data = await response.json();
 
         setWeather(data)
 
+
       } catch(err) {
-        
-        if(err.message === 'AbortError') return;
+
+        if (err.name === 'AbortError') return;
         setError(err.message)
 
       } finally {
-
+        
         setIsLoading(false)
       } 
       
     }
 
-
     fetchWeather()
 
     return () => controller.abort()
 
-  },[query])
+  },[debouncedQuery])
 
-  return {weather, isLoading, error}
+
+  return { weather,isLoading,error }
+
 }
+
+
+
