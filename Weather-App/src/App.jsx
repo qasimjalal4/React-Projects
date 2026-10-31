@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useWeather } from "./hooks/useWeather"
 import SearchBar from "./components/SearchBar"
-
+import WeatherCard from "./components/WeatherCard"
  
 
 function App() {
@@ -9,12 +9,12 @@ function App() {
   const [query, setQuery] = useState('')
   const [city, setCity]  = useState('')
 
-  const {weather, isLoading, error} = useWeather(city)
+  const {weather, isLoading, error} = useWeather('London')
 
 
   function searchCity() {
      if(query.trim()) {
-      searchCity(query)
+      setCity(query)
      }
   }
 
@@ -32,6 +32,20 @@ function App() {
       <SearchBar query={query} setQuery={setQuery} onSearch={searchCity} />
     </div>
 
+    <div className="mx-auto flex flex-col md:px-20 gap-6 md:flex-row">
+  
+     <div >
+      {weather && (
+       <WeatherCard weather={weather} />
+      )}
+
+
+     </div>
+
+     <div>
+
+     </div>
+    </div>
 
     
      </div>
