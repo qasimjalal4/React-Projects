@@ -1,4 +1,4 @@
-import { describe,expect,test,vi } from 'vitest'
+import { afterEach, beforeEach, describe,expect,test,vi } from 'vitest'
 import { useQuiz } from '../context/QuizContext'
 import ResultScreen from '../components/ResultScreen'
 import { render,screen } from '@testing-library/react'
@@ -12,16 +12,21 @@ vi.mock('../context/QuizContext', () => ({
 
 describe('ResultScreen', () => {
 
-  test('Displays the score correctly', () => {
+  const restartQuiz = vi.fn()
+
+  beforeEach(() => {
 
     useQuiz.mockReturnValue({
-      restartQuiz: vi.fn(),
+      restartQuiz,
       score: 8,
       questions: new Array(10)
     })
 
-    render(<ResultScreen />)
+  })
 
+  test('Displays the score correctly', () => {
+
+    render(<ResultScreen />)
 
     expect(screen.getByText('8/10')).toBeInTheDocument()
   })
@@ -29,25 +34,13 @@ describe('ResultScreen', () => {
 
   test('displays wrong correctly', () => {
 
-    useQuiz.mockReturnValue({
-      restartQuiz: vi.fn(),
-      score: 8,
-      questions: new Array(10)
-    })
-
     render(<ResultScreen />)
 
-    
     expect(screen.getByText('2')).toBeInTheDocument()
   })
 
 
   test('displays accuracy correctly', () => {
-    useQuiz.mockReturnValue({
-      restartQuiz: vi.fn(),
-      score: 8,
-      questions: new Array(10)
-    })
 
     render(<ResultScreen />)
 
@@ -57,12 +50,6 @@ describe('ResultScreen', () => {
 
   test('displays Great Job when accuracy is 80%', () => {
 
-    useQuiz.mockReturnValue({
-      restartQuiz: vi.fn(),
-      score: 8,
-      questions: new Array(10)
-    })
-
     render(<ResultScreen />)
 
     expect(screen.getByText('Great Job!')).toBeInTheDocument()
@@ -70,15 +57,6 @@ describe('ResultScreen', () => {
 
 
   test('calls restartQuiz when Play Again is clicked', async () => {
-
-
-    const restartQuiz = vi.fn()
-
-    useQuiz.mockReturnValue({
-      restartQuiz,
-      score: 8,
-      questions: new Array(10)
-    })
 
     const user = userEvent.setup()
 
@@ -92,6 +70,12 @@ describe('ResultScreen', () => {
 
     expect(restartQuiz).toHaveBeenCalled()
 
+  })
+
+
+  afterEach(() => {
+
+    vi.clearAllMocks()
   })
 
 })
