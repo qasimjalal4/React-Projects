@@ -3,7 +3,7 @@ const SearchBar = ({ query, setQuery, onSearch}) => {
   return (
     <div className="flex justify-center items-center gap-4">
       <input
-      className="flex-1  px-4 py-2 rounded-md font-semibold outline-none border-2 border-gray-400"
+      className="flex-1  px-4 py-3 rounded-md font-semibold outline-none border-2 border-gray-400"
       placeholder="Enter your city..."
       value={query}
       onChange={e => setQuery(e.target.value)}
