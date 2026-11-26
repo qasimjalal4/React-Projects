@@ -8,11 +8,11 @@ const WeatherCard = ({ weather }) => {
   return (
     <div className="bg-gradient-to-br from-[#3b3f8c] to-[#1a1f5e] flex flex-col md:flex-row
       rounded-2xl gap-8 items-center md:justify-between p-5 sm:p-6 lg:px-20 md:py-16 md:gap-16">
-     <div className="">
+     <div>
       <span className="text-white text-xl font-bold lg:text-2xl lg:mb-3">
         {weather.location.name}, {weather.location.country}
       </span>
-      <p className="text-white/70 mt-1 text-xs sm:text-sm">
+      <p className="text-white/70 mt-2 text-xs sm:text-sm">
         {date}
       </p>
      </div>
