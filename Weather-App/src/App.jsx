@@ -3,6 +3,7 @@ import { useWeather } from "./hooks/useWeather"
 import SearchBar from '../src/components/SearchBar' 
 import WeatherCard from '../src/components/WeatherCard'
 import WeatherStats from "../src/components/WeatherStats"
+import DailyForecast from "../src/components/DailyForecast"
 
 function App() {
  
@@ -36,6 +37,7 @@ function App() {
           <div className="lg:col-span-2 gap-y-4 lg:gap-y-6">
            <WeatherCard weather={weather} />
            <WeatherStats current={weather.current} />
+           <DailyForecast days={weather.forecast.forecastday} />
           </div>
           <div className="bg-white h-[500px]"></div>
          </div>
