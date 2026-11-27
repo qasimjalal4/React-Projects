@@ -4,15 +4,17 @@ import SearchBar from '../src/components/SearchBar'
 import WeatherCard from '../src/components/WeatherCard'
 import WeatherStats from "../src/components/WeatherStats"
 import DailyForecast from "../src/components/DailyForecast"
+import HourlyForecast from "./components/HourlyForecast"
+
 
 function App() {
  
   const [query, setQuery] = useState('')
   const [city, setCity]  = useState('')
 
-  const {weather, isLoading, error} = useWeather('Lahore')
+  const {weather, isLoading, error} = useWeather(city)
 
-  console.log(weather)
+
 
   function searchCity() {
      if(query.trim()) {
@@ -39,7 +41,9 @@ function App() {
            <WeatherStats current={weather.current} />
            <DailyForecast days={weather.forecast.forecastday} />
           </div>
-          <div className="bg-white h-[500px]"></div>
+          <div>
+            <HourlyForecast days={weather.forecast.forecastday} />
+          </div>
          </div>
        )}
     </div> 
